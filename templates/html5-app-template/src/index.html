@@ -1,66 +1,2220 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>html5-app-template</title>
-    <style>
-      body,
-      html {
-        margin: 0;
-        height: 100%;
-      }
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vite App</title>
+        <style>
+            /*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+            @layer properties {
+                @supports (
+                        ((-webkit-hyphens: none)) and
+                            (not (margin-trim: inline))
+                    )
+                    or
+                    (
+                        (-moz-orient: inline) and
+                            (not (color: rgb(from red r g b)))
+                    ) {
+                    *,
+                    :before,
+                    :after,
+                    ::backdrop {
+                        --tw-translate-x: 0;
+                        --tw-translate-y: 0;
+                        --tw-translate-z: 0;
+                        --tw-leading: initial;
+                        --tw-font-weight: initial;
+                        --tw-tracking: initial;
+                        --tw-duration: initial;
+                        --tw-border-style: solid;
+                    }
+                }
+            }
+            @font-face {
+                font-family: Mayo Clinic Sans;
+                src: url(/fonts/MayoClinicSans-Light.woff2) format("woff2");
+                font-weight: 300;
+                font-style: normal;
+                font-display: swap;
+            }
+            @font-face {
+                font-family: Mayo Clinic Sans;
+                src: url(/fonts/MayoClinicSans-Regular.woff2) format("woff2");
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+            }
+            @font-face {
+                font-family: Mayo Clinic Sans;
+                src: url(/fonts/MayoClinicSans-Medium.woff2) format("woff2");
+                font-weight: 500;
+                font-style: normal;
+                font-display: swap;
+            }
+            @font-face {
+                font-family: Mayo Clinic Sans;
+                src: url(/fonts/MayoClinicSans-Bold.woff2) format("woff2");
+                font-weight: 700;
+                font-style: normal;
+                font-display: swap;
+            }
+            @layer theme {
+                :root,
+                :host {
+                    --font-sans: ui-sans-serif, system-ui, sans-serif,
+                        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+                        "Noto Color Emoji";
+                    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco,
+                        Consolas, "Liberation Mono", "Courier New", monospace;
+                    --color-white: #fff;
+                    --spacing: 0.25rem;
+                    --text-xs: 0.75rem;
+                    --text-xs--line-height: calc(1 / 0.75);
+                    --text-lg: 1.125rem;
+                    --text-lg--line-height: calc(1.75 / 1.125);
+                    --text-xl: 1.25rem;
+                    --text-xl--line-height: calc(1.75 / 1.25);
+                    --font-weight-normal: 400;
+                    --font-weight-medium: 500;
+                    --font-weight-bold: 700;
+                    --tracking-wide: 0.025em;
+                    --default-transition-duration: 0.15s;
+                    --default-transition-timing-function: cubic-bezier(
+                        0.4,
+                        0,
+                        0.2,
+                        1
+                    );
+                    --default-font-family: var(--font-sans);
+                    --default-mono-font-family: var(--font-mono);
+                    --font-mayo: "Mayo Clinic Sans", sans-serif;
+                }
+            }
+            @layer base {
+                *,
+                :after,
+                :before,
+                ::backdrop {
+                    box-sizing: border-box;
+                    border: 0 solid;
+                    margin: 0;
+                    padding: 0;
+                }
+                ::file-selector-button {
+                    box-sizing: border-box;
+                    border: 0 solid;
+                    margin: 0;
+                    padding: 0;
+                }
+                html,
+                :host {
+                    -webkit-text-size-adjust: 100%;
+                    tab-size: 4;
+                    line-height: 1.5;
+                    font-family: var(
+                        --default-font-family,
+                        ui-sans-serif,
+                        system-ui,
+                        sans-serif,
+                        "Apple Color Emoji",
+                        "Segoe UI Emoji",
+                        "Segoe UI Symbol",
+                        "Noto Color Emoji"
+                    );
+                    font-feature-settings: var(
+                        --default-font-feature-settings,
+                        normal
+                    );
+                    font-variation-settings: var(
+                        --default-font-variation-settings,
+                        normal
+                    );
+                    -webkit-tap-highlight-color: transparent;
+                }
+                hr {
+                    height: 0;
+                    color: inherit;
+                    border-top-width: 1px;
+                }
+                abbr:where([title]) {
+                    -webkit-text-decoration: underline dotted;
+                    text-decoration: underline dotted;
+                }
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    font-size: inherit;
+                    font-weight: inherit;
+                }
+                a {
+                    color: inherit;
+                    -webkit-text-decoration: inherit;
+                    text-decoration: inherit;
+                }
+                b,
+                strong {
+                    font-weight: bolder;
+                }
+                code,
+                kbd,
+                samp,
+                pre {
+                    font-family: var(
+                        --default-mono-font-family,
+                        ui-monospace,
+                        SFMono-Regular,
+                        Menlo,
+                        Monaco,
+                        Consolas,
+                        "Liberation Mono",
+                        "Courier New",
+                        monospace
+                    );
+                    font-feature-settings: var(
+                        --default-mono-font-feature-settings,
+                        normal
+                    );
+                    font-variation-settings: var(
+                        --default-mono-font-variation-settings,
+                        normal
+                    );
+                    font-size: 1em;
+                }
+                small {
+                    font-size: 80%;
+                }
+                sub,
+                sup {
+                    vertical-align: baseline;
+                    font-size: 75%;
+                    line-height: 0;
+                    position: relative;
+                }
+                sub {
+                    bottom: -0.25em;
+                }
+                sup {
+                    top: -0.5em;
+                }
+                table {
+                    text-indent: 0;
+                    border-color: inherit;
+                    border-collapse: collapse;
+                }
+                :-moz-focusring {
+                    outline: auto;
+                }
+                progress {
+                    vertical-align: baseline;
+                }
+                summary {
+                    display: list-item;
+                }
+                ol,
+                ul,
+                menu {
+                    list-style: none;
+                }
+                img,
+                svg,
+                video,
+                canvas,
+                audio,
+                iframe,
+                embed,
+                object {
+                    vertical-align: middle;
+                    display: block;
+                }
+                img,
+                video {
+                    max-width: 100%;
+                    height: auto;
+                }
+                button,
+                input,
+                select,
+                optgroup,
+                textarea {
+                    font: inherit;
+                    font-feature-settings: inherit;
+                    font-variation-settings: inherit;
+                    letter-spacing: inherit;
+                    color: inherit;
+                    opacity: 1;
+                    background-color: rgba(0, 0, 0, 0);
+                    border-radius: 0;
+                }
+                ::file-selector-button {
+                    font: inherit;
+                    font-feature-settings: inherit;
+                    font-variation-settings: inherit;
+                    letter-spacing: inherit;
+                    color: inherit;
+                    opacity: 1;
+                    background-color: rgba(0, 0, 0, 0);
+                    border-radius: 0;
+                }
+                :where(select:is([multiple], [size])) optgroup {
+                    font-weight: bolder;
+                }
+                :where(select:is([multiple], [size])) optgroup option {
+                    padding-inline-start: 20px;
+                }
+                ::file-selector-button {
+                    margin-inline-end: 4px;
+                }
+                ::placeholder {
+                    opacity: 1;
+                }
+                @supports (not ((-webkit-appearance: -apple-pay-button))) or
+                    (contain-intrinsic-size: 1px) {
+                    ::placeholder {
+                        color: currentColor;
+                    }
+                    @supports (color: color-mix(in lab, red, red)) {
+                        ::placeholder {
+                            color: color-mix(
+                                in oklab,
+                                currentcolor 50%,
+                                transparent
+                            );
+                        }
+                    }
+                }
+                textarea {
+                    resize: vertical;
+                }
+                ::-webkit-search-decoration {
+                    -webkit-appearance: none;
+                }
+                ::-webkit-date-and-time-value {
+                    min-height: 1lh;
+                    text-align: inherit;
+                }
+                ::-webkit-datetime-edit {
+                    display: inline-flex;
+                }
+                ::-webkit-datetime-edit-fields-wrapper {
+                    padding: 0;
+                }
+                ::-webkit-datetime-edit {
+                    padding-block: 0;
+                }
+                ::-webkit-datetime-edit-year-field {
+                    padding-block: 0;
+                }
+                ::-webkit-datetime-edit-month-field {
+                    padding-block: 0;
+                }
+                ::-webkit-datetime-edit-day-field {
+                    padding-block: 0;
+                }
+                ::-webkit-datetime-edit-hour-field {
+                    padding-block: 0;
+                }
+                ::-webkit-datetime-edit-minute-field {
+                    padding-block: 0;
+                }
+                ::-webkit-datetime-edit-second-field {
+                    padding-block: 0;
+                }
+                ::-webkit-datetime-edit-millisecond-field {
+                    padding-block: 0;
+                }
+                ::-webkit-datetime-edit-meridiem-field {
+                    padding-block: 0;
+                }
+                :-moz-ui-invalid {
+                    box-shadow: none;
+                }
+                button,
+                input:where([type="button"], [type="reset"], [type="submit"]) {
+                    -webkit-appearance: button;
+                    appearance: button;
+                }
+                ::file-selector-button {
+                    -webkit-appearance: button;
+                    appearance: button;
+                }
+                ::-webkit-inner-spin-button {
+                    height: auto;
+                }
+                ::-webkit-outer-spin-button {
+                    height: auto;
+                }
+                [hidden]:where(:not([hidden="until-found"])) {
+                    display: none !important;
+                }
+            }
+            @layer components;
+            @layer utilities {
+                .pointer-events-none {
+                    pointer-events: none;
+                }
+                .absolute {
+                    position: absolute;
+                }
+                .relative {
+                    position: relative;
+                }
+                .sticky {
+                    position: sticky;
+                }
+                .-top-\[0px\] {
+                    top: 0;
+                }
+                .top-0 {
+                    top: calc(var(--spacing) * 0);
+                }
+                .top-20 {
+                    top: calc(var(--spacing) * 20);
+                }
+                .top-\[158px\] {
+                    top: 158px;
+                }
+                .top-\[166px\] {
+                    top: 166px;
+                }
+                .top-\[349px\] {
+                    top: 349px;
+                }
+                .top-\[424px\] {
+                    top: 424px;
+                }
+                .top-\[451px\] {
+                    top: 451px;
+                }
+                .top-\[650px\] {
+                    top: 650px;
+                }
+                .top-\[858px\] {
+                    top: 858px;
+                }
+                .top-\[1329px\] {
+                    top: 1329px;
+                }
+                .top-\[1365px\] {
+                    top: 1365px;
+                }
+                .right-14 {
+                    right: calc(var(--spacing) * 14);
+                }
+                .right-\[285px\] {
+                    right: 285px;
+                }
+                .right-\[304px\] {
+                    right: 304px;
+                }
+                .bottom-6 {
+                    bottom: calc(var(--spacing) * 6);
+                }
+                .bottom-\[197px\] {
+                    bottom: 197px;
+                }
+                .bottom-\[467px\] {
+                    bottom: 467px;
+                }
+                .-left-\[71px\] {
+                    left: -71px;
+                }
+                .left-\[197px\] {
+                    left: 197px;
+                }
+                .z-10 {
+                    z-index: 10;
+                }
+                .z-20 {
+                    z-index: 20;
+                }
+                .m-auto {
+                    margin: auto;
+                }
+                .mx-auto {
+                    margin-inline: auto;
+                }
+                .my-2 {
+                    margin-block: calc(var(--spacing) * 2);
+                }
+                .my-4 {
+                    margin-block: calc(var(--spacing) * 4);
+                }
+                .-mt-24 {
+                    margin-top: calc(var(--spacing) * -24);
+                }
+                .mt-0\.5 {
+                    margin-top: calc(var(--spacing) * 0.5);
+                }
+                .mt-6 {
+                    margin-top: calc(var(--spacing) * 6);
+                }
+                .mr-7 {
+                    margin-right: calc(var(--spacing) * 7);
+                }
+                .mr-\[158px\] {
+                    margin-right: 158px;
+                }
+                .-mb-\[145px\] {
+                    margin-bottom: -145px;
+                }
+                .mb-2 {
+                    margin-bottom: calc(var(--spacing) * 2);
+                }
+                .mb-3\.5 {
+                    margin-bottom: calc(var(--spacing) * 3.5);
+                }
+                .mb-4 {
+                    margin-bottom: calc(var(--spacing) * 4);
+                }
+                .mb-7 {
+                    margin-bottom: calc(var(--spacing) * 7);
+                }
+                .ml-\[74px\] {
+                    margin-left: 74px;
+                }
+                .ml-\[213px\] {
+                    margin-left: 213px;
+                }
+                .ml-\[240px\] {
+                    margin-left: 240px;
+                }
+                .ml-\[293px\] {
+                    margin-left: 293px;
+                }
+                .ml-\[297px\] {
+                    margin-left: 297px;
+                }
+                .ml-auto {
+                    margin-left: auto;
+                }
+                .flex {
+                    display: flex;
+                }
+                .h-1\/3 {
+                    height: 33.3333%;
+                }
+                .h-\[66px\] {
+                    height: 66px;
+                }
+                .h-\[100px\] {
+                    height: 100px;
+                }
+                .h-\[142px\] {
+                    height: 142px;
+                }
+                .h-\[485px\] {
+                    height: 485px;
+                }
+                .h-\[936px\] {
+                    height: 936px;
+                }
+                .h-\[1621px\] {
+                    height: 1621px;
+                }
+                .h-full {
+                    height: 100%;
+                }
+                .h-screen {
+                    height: 100vh;
+                }
+                .max-h-\[89px\] {
+                    max-height: 89px;
+                }
+                .min-h-\[67px\] {
+                    min-height: 67px;
+                }
+                .min-h-\[130px\] {
+                    min-height: 130px;
+                }
+                .min-h-\[579px\] {
+                    min-height: 579px;
+                }
+                .w-1\/2 {
+                    width: 50%;
+                }
+                .w-\[1416px\] {
+                    width: 1416px;
+                }
+                .w-full {
+                    width: 100%;
+                }
+                .max-w-40 {
+                    max-width: calc(var(--spacing) * 40);
+                }
+                .max-w-56 {
+                    max-width: calc(var(--spacing) * 56);
+                }
+                .max-w-\[156px\] {
+                    max-width: 156px;
+                }
+                .max-w-\[292px\] {
+                    max-width: 292px;
+                }
+                .max-w-\[300px\] {
+                    max-width: 300px;
+                }
+                .max-w-\[346px\] {
+                    max-width: 346px;
+                }
+                .max-w-\[350px\] {
+                    max-width: 350px;
+                }
+                .max-w-\[390px\] {
+                    max-width: 390px;
+                }
+                .max-w-\[456px\] {
+                    max-width: 456px;
+                }
+                .max-w-\[513px\] {
+                    max-width: 513px;
+                }
+                .max-w-\[592px\] {
+                    max-width: 592px;
+                }
+                .min-w-\[205px\] {
+                    min-width: 205px;
+                }
+                .flex-1 {
+                    flex: 1;
+                }
+                .translate-x-\[82px\] {
+                    --tw-translate-x: 82px;
+                    translate: var(--tw-translate-x) var(--tw-translate-y);
+                }
+                .cursor-pointer {
+                    cursor: pointer;
+                }
+                .flex-col {
+                    flex-direction: column;
+                }
+                .items-center {
+                    align-items: center;
+                }
+                .items-end {
+                    align-items: flex-end;
+                }
+                .justify-between {
+                    justify-content: space-between;
+                }
+                .justify-center {
+                    justify-content: center;
+                }
+                .gap-2 {
+                    gap: calc(var(--spacing) * 2);
+                }
+                .gap-8 {
+                    gap: calc(var(--spacing) * 8);
+                }
+                .gap-10 {
+                    gap: calc(var(--spacing) * 10);
+                }
+                .gap-12 {
+                    gap: calc(var(--spacing) * 12);
+                }
+                .gap-16 {
+                    gap: calc(var(--spacing) * 16);
+                }
+                .overflow-hidden {
+                    overflow: hidden;
+                }
+                .overflow-visible {
+                    overflow: visible;
+                }
+                .rounded-tl-full {
+                    border-top-left-radius: 3.40282e38px;
+                }
+                .rounded-tr-full {
+                    border-top-right-radius: 3.40282e38px;
+                }
+                .rounded-br-full {
+                    border-bottom-right-radius: 3.40282e38px;
+                }
+                .rounded-bl-full {
+                    border-bottom-left-radius: 3.40282e38px;
+                }
+                .px-8 {
+                    padding-inline: calc(var(--spacing) * 8);
+                }
+                .py-0\.5 {
+                    padding-block: calc(var(--spacing) * 0.5);
+                }
+                .py-1 {
+                    padding-block: calc(var(--spacing) * 1);
+                }
+                .py-5 {
+                    padding-block: calc(var(--spacing) * 5);
+                }
+                .pt-2 {
+                    padding-top: calc(var(--spacing) * 2);
+                }
+                .pt-4 {
+                    padding-top: calc(var(--spacing) * 4);
+                }
+                .pt-5 {
+                    padding-top: calc(var(--spacing) * 5);
+                }
+                .pt-6 {
+                    padding-top: calc(var(--spacing) * 6);
+                }
+                .pt-12 {
+                    padding-top: calc(var(--spacing) * 12);
+                }
+                .pt-\[306px\] {
+                    padding-top: 306px;
+                }
+                .pt-\[354px\] {
+                    padding-top: 354px;
+                }
+                .pr-12 {
+                    padding-right: calc(var(--spacing) * 12);
+                }
+                .pb-1 {
+                    padding-bottom: calc(var(--spacing) * 1);
+                }
+                .pb-6 {
+                    padding-bottom: calc(var(--spacing) * 6);
+                }
+                .text-center {
+                    text-align: center;
+                }
+                .text-right {
+                    text-align: right;
+                }
+                .text-lg {
+                    font-size: var(--text-lg);
+                    line-height: var(--tw-leading, var(--text-lg--line-height));
+                }
+                .text-xl {
+                    font-size: var(--text-xl);
+                    line-height: var(--tw-leading, var(--text-xl--line-height));
+                }
+                .text-\[11px\] {
+                    font-size: 11px;
+                }
+                .text-\[17px\] {
+                    font-size: 17px;
+                }
+                .text-\[32px\] {
+                    font-size: 32px;
+                }
+                .text-\[40px\] {
+                    font-size: 40px;
+                }
+                .leading-3\.5 {
+                    --tw-leading: calc(var(--spacing) * 3.5);
+                    line-height: calc(var(--spacing) * 3.5);
+                }
+                .leading-5 {
+                    --tw-leading: calc(var(--spacing) * 5);
+                    line-height: calc(var(--spacing) * 5);
+                }
+                .leading-7 {
+                    --tw-leading: calc(var(--spacing) * 7);
+                    line-height: calc(var(--spacing) * 7);
+                }
+                .leading-9 {
+                    --tw-leading: calc(var(--spacing) * 9);
+                    line-height: calc(var(--spacing) * 9);
+                }
+                .leading-\[19px\] {
+                    --tw-leading: 19px;
+                    line-height: 19px;
+                }
+                .font-bold {
+                    --tw-font-weight: var(--font-weight-bold);
+                    font-weight: var(--font-weight-bold);
+                }
+                .font-medium {
+                    --tw-font-weight: var(--font-weight-medium);
+                    font-weight: var(--font-weight-medium);
+                }
+                .font-normal {
+                    --tw-font-weight: var(--font-weight-normal);
+                    font-weight: var(--font-weight-normal);
+                }
+                .tracking-\[0\.64px\] {
+                    --tw-tracking: 0.64px;
+                    letter-spacing: 0.64px;
+                }
+                .tracking-\[0\.88px\] {
+                    --tw-tracking: 0.88px;
+                    letter-spacing: 0.88px;
+                }
+                .transition-opacity {
+                    transition-property: opacity;
+                    transition-timing-function: var(
+                        --tw-ease,
+                        var(--default-transition-timing-function)
+                    );
+                    transition-duration: var(
+                        --tw-duration,
+                        var(--default-transition-duration)
+                    );
+                }
+                .duration-300 {
+                    --tw-duration: 0.3s;
+                    transition-duration: 0.3s;
+                }
+            }
+            body {
+                max-width: 1080px;
+                font-family: var(--font-mayo);
+                color: var(--color-white);
+                background: linear-gradient(
+                    #0d0d33,
+                    #0057b8 18%,
+                    #009cde 43.5%,
+                    #008bd5 72%,
+                    #0d0d33 95%
+                );
+                position: relative;
+            }
+            section:not(:has(#care-1)),
+            section #care-1,
+            section #care-2 {
+                aspect-ratio: 9/16;
+                min-width: 1080px;
+                min-height: 1920px;
+                position: relative;
+            }
+            video.bg {
+                pointer-events: none;
+                top: calc(var(--spacing) * 0);
+                left: calc(var(--spacing) * 0);
+                z-index: 0;
+                object-fit: cover;
+                mix-blend-mode: screen;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+            nav ul li {
+                align-items: center;
+                gap: calc(var(--spacing) * 2);
+                display: flex;
+            }
+            nav ul li div {
+                height: 100%;
+                min-height: calc(var(--spacing) * 8);
+                width: calc(var(--spacing) * 2.5);
+                border-style: var(--tw-border-style);
+                border-width: 1px;
+                border-color: var(--color-white);
+            }
+            .nav-dot {
+                text-align: right;
+                font-size: var(--text-xs);
+                line-height: var(--tw-leading, var(--text-xs--line-height));
+                --tw-leading: calc(var(--spacing) * 8);
+                line-height: calc(var(--spacing) * 8);
+                --tw-font-weight: var(--font-weight-bold);
+                font-weight: var(--font-weight-bold);
+                --tw-tracking: var(--tracking-wide);
+                letter-spacing: var(--tracking-wide);
+                color: var(--color-white);
+                opacity: 0.5;
+                transition-property:
+                    color,
+                    background-color,
+                    border-color,
+                    outline-color,
+                    text-decoration-color,
+                    fill,
+                    stroke,
+                    --tw-gradient-from,
+                    --tw-gradient-via,
+                    --tw-gradient-to,
+                    opacity,
+                    box-shadow,
+                    transform,
+                    translate,
+                    scale,
+                    rotate,
+                    filter,
+                    -webkit-backdrop-filter,
+                    backdrop-filter,
+                    display,
+                    visibility,
+                    content-visibility,
+                    overlay,
+                    pointer-events;
+                transition-timing-function: var(
+                    --tw-ease,
+                    var(--default-transition-timing-function)
+                );
+                transition-duration: var(
+                    --tw-duration,
+                    var(--default-transition-duration)
+                );
+                --tw-duration: 0.3s;
+                transition-duration: 0.3s;
+            }
+            .nav-dot.active {
+                --tw-font-weight: var(--font-weight-bold);
+                font-weight: var(--font-weight-bold);
+                opacity: 1;
+            }
+            .nav-dot.active + div {
+                background-color: var(--color-white);
+            }
+            #home div.content h1 {
+                text-align: center;
+                letter-spacing: 1.86px;
+                font-size: 31px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 69px;
+            }
+            #home div.content h1 span {
+                letter-spacing: 6.3px;
+                font-size: 105px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 91px;
+            }
+            #home div.content p {
+                text-align: center;
+                font-size: 25px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 96%;
+            }
+            .animText {
+                letter-spacing: 0.36px;
+                font-size: 18px;
+                font-style: normal;
+                line-height: 21px;
+            }
+            .section-title {
+                letter-spacing: 1.88px;
+                font-size: 47px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 48px;
+            }
+            p:not(.custom) {
+                letter-spacing: 0.36px;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 21px;
+            }
+            p.large {
+                letter-spacing: 0.8px;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 48px;
+            }
+            .bg-blue-radiant {
+                background: radial-gradient(#1fa2ff, #06c 40%, #036 90%);
+            }
+            .videoContainer {
+                z-index: 10;
+            }
+            .iconContainer {
+                align-items: center;
+                padding-inline: 84px;
+                display: flex;
+            }
+            .iconContainer h3.iconTitle {
+                letter-spacing: 3.63px;
+                padding-bottom: 6px;
+                font-size: 33px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 17px;
+            }
+            .iconContainer p span:not(.sub) {
+                font-size: 33px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 19px;
+            }
+            .iconContainer p span.sub {
+                letter-spacing: 0.6px;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 21px;
+            }
+            .number {
+                text-align: center;
+                min-width: 105px;
+                min-height: 89px;
+                font-size: 115px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 80px;
+            }
+            #involved h3 {
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 23px;
+            }
+            #involved div h3 + p {
+                letter-spacing: 0.36px;
+                max-width: 589px;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 23px;
+            }
+            @property --tw-translate-x {
+                syntax: "*";
+                inherits: false;
+                initial-value: 0;
+            }
+            @property --tw-translate-y {
+                syntax: "*";
+                inherits: false;
+                initial-value: 0;
+            }
+            @property --tw-translate-z {
+                syntax: "*";
+                inherits: false;
+                initial-value: 0;
+            }
+            @property --tw-leading {
+                syntax: "*";
+                inherits: false;
+            }
+            @property --tw-font-weight {
+                syntax: "*";
+                inherits: false;
+            }
+            @property --tw-tracking {
+                syntax: "*";
+                inherits: false;
+            }
+            @property --tw-duration {
+                syntax: "*";
+                inherits: false;
+            }
+            @property --tw-border-style {
+                syntax: "*";
+                inherits: false;
+                initial-value: solid;
+            }
+        </style>
+        <script type="text/javascript" src="./dist/bundle.js"></script>
+    </head>
+    <body>
+        <nav class="absolute right-14 top-0 z-20 h-full">
+            <ul class="sticky top-20">
+                <li>
+                    <button data-target="home" class="nav-dot w-full active">
+                        HOME
+                    </button>
+                    <div class="rounded-tl-full rounded-tr-full"></div>
+                </li>
+                <li>
+                    <button data-target="mission" class="nav-dot w-full">
+                        OUR MISSION
+                    </button>
+                    <div></div>
+                </li>
+                <li>
+                    <button data-target="care" class="nav-dot w-full">
+                        PATIENT CARE
+                    </button>
+                    <div></div>
+                </li>
+                <li>
+                    <button data-target="closer" class="nav-dot w-full">
+                        A CLOSER LOOK
+                    </button>
+                    <div></div>
+                </li>
+                <li>
+                    <button data-target="involved" class="nav-dot w-full">
+                        GET INVOLVED
+                    </button>
+                    <div class="rounded-bl-full rounded-br-full"></div>
+                </li>
+            </ul>
+        </nav>
 
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #301b69;
-        color: white;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        padding: 16px;
-      }
+        <main>
+            <section id="home" class="h-screen">
+                <video class="bg" autoplay muted loop playsinline>
+                    <source src="/videos/section-1.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <img class="m-auto pt-12" src="/images/ric-logo.png" alt="" />
+                <div class="content absolute w-full top-[858px]">
+                    <h1 class="text-center">
+                        EVERY JOURNEY BEGINS <br />
+                        <span>WITH HOPE</span>
+                    </h1>
+                    <p class="mt-0.5">
+                        Discover the power of <br />research at Mayo Clinic.
+                    </p>
+                </div>
+                <p class="absolute top-[1329px] text-center w-full">
+                    Scroll to learn more.
+                </p>
+                <svg
+                    class="draw absolute z-10 top-[1365px] -left-[71px] overflow-visible"
+                    width="613"
+                    height="2880"
+                    viewBox="0 0 613 2880"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        id="homePath"
+                        d="M612 0.5V1152.5C612 1196.13 576.63 1231.5 533 1231.5H80C36.3695 1231.5 1 1266.87 1 1310.5V1707.5C1 1751.13 36.3501 1786.5 79.9806 1786.5C185.735 1786.5 377.898 1786.5 532.075 1786.5C575.705 1786.5 611 1821.87 611 1865.5V2879.5"
+                        stroke="#5CB5EA"
+                    />
+                    <circle id="dot" cx="2" cy="2" r="2" fill="#5CB5EA" />
+                </svg>
+            </section>
+            <section id="mission" class="h-screen">
+                <video class="bg" autoplay muted loop playsinline>
+                    <source src="/videos/section-2.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <p
+                    class="relative max-w-40 top-[451px] right-[304px] ml-auto font-medium"
+                >
+                    At Mayo Clinic, the needs of the patient come first.
+                </p>
+                <div
+                    class="flex items-center w-full h-[485px] gap-8 pr-12 relative top-[650px] justify-between overflow-hidden"
+                >
+                    <div class="ml-[74px] max-w-[456px]">
+                        <h2 class="section-title">OUR MISSION. HOPE.</h2>
+                        <p class="large">
+                            Hope is a little word with such a big meaning.
+                        </p>
+                        <p>
+                            Hope is at the foundation of all we do, especially
+                            in research. We believe in the promise of a brighter
+                            future, and we conduct research to help make that
+                            belief become reality.
+                            <br />
+                            <br />
+                            Part of this commitment involves conducting medical
+                            research with the goal of helping patients live
+                            longer, healthier lives. Through discovery science
+                            and clinical studies, researchers can better
+                            understand how to diagnose, treat, prevent, and cure
+                            diseases or conditions.
+                        </p>
+                    </div>
+                    <img class="" src="/images/mission.png" alt="" />
+                </div>
+                <p
+                    class="animText font-medium ml-auto absolute max-w-56 bottom-[467px] right-[285px]"
+                >
+                    Mayo Clinic's innovative research is accelerating
+                    discoveries and cures for patients.
+                </p>
+            </section>
+            <section>
+                <div id="care-1" class="h-screen relative -mb-[145px]">
+                    <video class="bg" autoplay muted loop playsinline>
+                        <source src="/videos/section-3.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div
+                        class="w-full relative top-[424px] flex items-center justify-center h"
+                    >
+                        <img
+                            class="absolute w-[1416px] h-[1621px]"
+                            src="/images/devider-1.png"
+                            alt=""
+                        />
+                        <div class="z-10">
+                            <h2 class="section-title text-center">
+                                ADVANCING PATIENT CARE
+                            </h2>
+                            <p class="large text-center">
+                                What our research looks like and how it works
+                            </p>
+                            <p class="max-w-[592px] text-center">
+                                Medical research is more than just collecting
+                                and studying data— it’s about finding real cures
+                                that help patients.
+                                <br />
+                                <br />
 
-      h1 {
-        font-size: 48px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
+                                Utilizing a wealth of data, including genetics,
+                                biobanks, digital images, and clinical records,
+                                we drive innovation to deliver new knowledge and
+                                insights. With our unique strengths and
+                                resources, we are speeding up discoveries and
+                                creating better ways to diagnose, treat,
+                                prevent, and cure disease.
+                                <br />
+                                <br />
 
-      #info {
-        margin-top: 32px;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        font-size: 32px;
-      }
+                                To explain some of the process, here are two
+                                important steps in bringing new treatments to
+                                patients:
+                            </p>
+                        </div>
+                        <div class="z-10 absolute w-full top-[349px]">
+                            <svg
+                                class="draw m-auto overflow-visible"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="2"
+                                height="386"
+                                viewBox="0 0 2 386"
+                                fill="none"
+                            >
+                                <path d="M1 0L1.00002 386" stroke="#5CB5EA" />
+                                <circle
+                                    id=""
+                                    cx="2"
+                                    cy="2"
+                                    r="2"
+                                    fill="#5CB5EA"
+                                />
+                            </svg>
+                            <div
+                                class="w-full flex items-center justify-center gap-10 absolute bottom-6"
+                            >
+                                <div
+                                    class="w-1/2 flex flex-col text-right items-end"
+                                >
+                                    <h2 class="section-title">
+                                        DISCOVERY <br />SCIENCE
+                                    </h2>
+                                    <svg
+                                        class="my-2"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="237"
+                                        height="2"
+                                        viewBox="0 0 237 2"
+                                        fill="none"
+                                    >
+                                        <path
+                                            d="M237 1L-5.90086e-06 1"
+                                            stroke="#F2FAFF"
+                                        />
+                                    </svg>
+                                    <p>
+                                        Uncovering how diseases work <br />at
+                                        the most fundamental level.
+                                    </p>
+                                </div>
 
-      .label {
-        font-weight: bold;
-        margin-right: 8px;
-      }
-    </style>
-    <script type="text/javascript" src="./dist/bundle.js"></script>
-  </head>
-  <body onload="window.main()">
-    <h1>BrightSign Web App</h1>
-    <div id="info">
-      <div id="ipAddress">
-        <span class="label">IP Address:</span>
-        <span class="value">loading...</span>
-      </div>
-      <div id="model">
-        <span class="label">Model:</span>
-        <span class="value">loading...</span>
-      </div>
-      <div id="osVersion">
-        <span class="label">OS Version:</span>
-        <span class="value">loading...</span>
-      </div>
-      <div id="serialNumber">
-        <span class="label">Serial Number:</span>
-        <span class="value">loading...</span>
-      </div>
-    </div>
-  </body>
+                                <div class="w-1/2">
+                                    <p class="max-w-[300px]">
+                                        This is where research often begins.
+                                        Scientists explore the biological
+                                        processes of diseases at a cellular and
+                                        molecular level, testing ideas in
+                                        laboratory settings. Their work helps
+                                        identify potential treatments and
+                                        medical innovations before they reach
+                                        patient trials.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute w-full py-5 flex items-center justify-center videoContainer px-8"
+                            >
+                                <video
+                                    class="m-auto min-h-[579px]"
+                                    poster="/images/clinical-poster.png"
+                                    playsinline
+                                >
+                                    <source
+                                        src="/videos/clinical-trial.mp4"
+                                        type="video/mp4"
+                                    />
+                                    Your browser does not support the video tag.
+                                </video>
+                                <svg
+                                    class="absolute cursor-pointer playButton transition-opacity duration-300"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="96"
+                                    height="98"
+                                    viewBox="0 0 96 98"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M48 95.3978C72.8528 95.3978 93 74.7139 93 49.1989C93 23.684 72.8528 3 48 3C23.1472 3 3 23.684 3 49.1989C3 74.7139 23.1472 95.3978 48 95.3978Z"
+                                        fill="#090A38"
+                                        fill-opacity="0.2"
+                                        stroke="#E0E0E0"
+                                        stroke-width="5"
+                                    />
+                                    <path
+                                        d="M38.6895 36.4546L63.517 49.1991L38.6895 61.9436V36.4546Z"
+                                        stroke="#09F7FF"
+                                        stroke-width="5"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="care-2" class="h-screen relative">
+                    <img class="absolute" src="/images/devider-2.png" alt="" />
+                    <video class="bg" autoplay muted loop playsinline>
+                        <source src="/videos/section-4.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="w-full relative -top-[0px]">
+                        <svg
+                            class="draw m-auto overflow-visible"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="2"
+                            height="561"
+                            viewBox="0 0 2 561"
+                            fill="none"
+                        >
+                            <path d="M1.00002 0L1.00002 561" stroke="#5CB5EA" />
+                            <circle
+                                id="dot"
+                                cx="2"
+                                cy="2"
+                                r="2"
+                                fill="#5CB5EA"
+                            />
+                        </svg>
+                        <div
+                            class="w-full flex items-center justify-center gap-10 absolute bottom-6"
+                        >
+                            <div
+                                class="w-1/2 flex flex-col text-right items-end"
+                            >
+                                <h2 class="section-title">
+                                    CLINICAL<br />TRIALS
+                                </h2>
+                                <svg
+                                    class="my-2"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="237"
+                                    height="2"
+                                    viewBox="0 0 237 2"
+                                    fill="none"
+                                >
+                                    <path
+                                        d="M237 1L-5.90086e-06 1"
+                                        stroke="#F2FAFF"
+                                    />
+                                </svg>
+                                <p>
+                                    Testing and refining treatments
+                                    <br />to bring them to patients.
+                                </p>
+                            </div>
+
+                            <div class="w-1/2">
+                                <p class="max-w-[350px]">
+                                    Once a potential treatment or approach shows
+                                    promise in discovery science, it moves into
+                                    clinical trials. Here, physicians and
+                                    researchers work with patients to test new
+                                    treatments, drugs, or medical
+                                    devices—ensuring they are safe and effective
+                                    before they become standard care.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="w-full py-5 flex items-center justify-center videoContainer px-8"
+                    >
+                        <video
+                            class="m-auto min-h-[579px] relative z-10"
+                            poster="/images/pre-clinical-poster.png"
+                            playsinline
+                        >
+                            <source
+                                src="/videos/pre-clinical-trial.mp4"
+                                type="video/mp4"
+                            />
+                            Your browser does not support the video tag.
+                        </video>
+                        <svg
+                            class="absolute cursor-pointer playButton transition-opacity duration-300 z-20"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="96"
+                            height="98"
+                            viewBox="0 0 96 98"
+                            fill="none"
+                        >
+                            <path
+                                d="M48 95.3978C72.8528 95.3978 93 74.7139 93 49.1989C93 23.684 72.8528 3 48 3C23.1472 3 3 23.684 3 49.1989C3 74.7139 23.1472 95.3978 48 95.3978Z"
+                                fill="#090A38"
+                                fill-opacity="0.2"
+                                stroke="#E0E0E0"
+                                stroke-width="5"
+                            />
+                            <path
+                                d="M38.6895 36.4546L63.517 49.1991L38.6895 61.9436V36.4546Z"
+                                stroke="#09F7FF"
+                                stroke-width="5"
+                            />
+                        </svg>
+                    </div>
+                    <div class="overflow-hidden relative">
+                        <svg
+                            class="relative draw z-10 translate-x-[82px] ml-auto pointer-events-none overflow-visible pb-1"
+                            width="626"
+                            height="1048"
+                            viewBox="0 0 626 1048"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M1 0V37.739C1 81.3695 36.3695 116.739 80 116.739H546C589.63 116.739 625 152.109 625 195.739V538.62C625 582.25 589.63 617.62 546 617.62H80C36.3695 617.62 1 652.989 1 696.62L1 1048"
+                                stroke="#5CB5EA"
+                            />
+                            <circle id="" cx="2" cy="2" r="2" fill="#5CB5EA" />
+                        </svg>
+                        <div
+                            class="flex items-center w-full gap-12 justify-center overflow-hidden absolute top-[166px]"
+                        >
+                            <img
+                                class=""
+                                src="/images/multidisciple-teams.png"
+                                alt=""
+                            />
+                            <div class="max-w-[390px]">
+                                <h2
+                                    class="text-[40px] leading-9 font-bold mb-7"
+                                >
+                                    MULTIDISCIPLINARY TEAMS
+                                </h2>
+                                <p>
+                                    At Mayo Clinic, research isn’t done in
+                                    silos. Our unique culture of collaboration
+                                    and teamwork, and our extensive facilities
+                                    and resources, make it possible for
+                                    researchers to unravel and solve complex
+                                    research questions.
+                                    <br />
+                                    <br />
+                                    This close integration makes it possible to
+                                    quickly bring new technologies, therapies,
+                                    and cures to patients and share this
+                                    knowledge with the next generation of
+                                    doctors and scientists.
+                                </p>
+                            </div>
+                        </div>
+                        <p
+                            class="animText text-right font-normal absolute bottom-[197px] left-[197px] h-[142px]"
+                        >
+                            <span class="font-bold">THE RESULTS?</span><br />
+                            More hope. Innovative tools. <br />Improved patient
+                            care. Better health.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="closer" class="h-screen pt-[306px]">
+                <img
+                    class="absolute pointer-events-none -mt-24"
+                    src="/images/devider-3.png"
+                    alt=""
+                />
+
+                <video class="bg" autoplay muted loop playsinline>
+                    <source src="/videos/section-5.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div class="pt-4 relative">
+                    <h2 class="section-title text-center">A CLOSER LOOK</h2>
+                    <p class="large text-center">
+                        The people, places, and progress behind every discovery.
+                    </p>
+                    <div
+                        class="flex items-center justify-between gap-16 pt-5 pb-6"
+                    >
+                        <p class="max-w-[292px] text-center ml-[213px]">
+                            Behind every medical breakthrough is a team of
+                            experts, cutting-edge facilities, and thousands of
+                            research studies working toward one goal: advancing
+                            patient care.
+                        </p>
+                        <p class="max-w-[346px] text-center mr-[158px]">
+                            At Mayo Clinic, research isn’t just something that
+                            happens in a lab—it’s a dynamic, collaborative
+                            effort that spans scientists, physicians, and
+                            researchers all working together to push medicine
+                            forward.
+                        </p>
+                    </div>
+                    <p
+                        class="custom max-w-[513px] text-center m-auto leading-7 text-xl font-bold"
+                    >
+                        Here's a closer look at the people, places, and progress
+                        that drive research and innovation at Mayo Clinic.
+                    </p>
+                    <div class="relative">
+                        <svg
+                            class="overflow-visible draw m-auto py-1 pt-4"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="976"
+                            height="1639"
+                            viewBox="0 0 976 1639"
+                            fill="none"
+                        >
+                            <path
+                                d="M489 0.5V58.0056C489 101.636 453.63 137.006 410 137.006H80C36.3695 137.006 1 172.375 1 216.006V377.133C1 420.763 36.3695 456.133 80 456.133H896C939.631 456.133 975 491.502 975 535.133V689C975 732.63 939.63 768 896 768H80C36.3695 768 1 803.37 1 847V1011.19C1 1055.13 36.8648 1090.63 80.8094 1090.18L409.191 1086.82C453.135 1086.37 489 1121.87 489 1165.81V1639"
+                                stroke="#5CB5EA"
+                            />
+                            <circle id="" cx="2" cy="2" r="2" fill="#5CB5EA" />
+                        </svg>
+                        <div
+                            class="w-full absolute top-[158px] h-[936px] flex flex-col"
+                        >
+                            <div class="h-1/3 iconContainer">
+                                <div class="min-w-[205px] mr-7">
+                                    <h3 class="iconTitle">PEOPLE</h3>
+                                    <p
+                                        class="font-medium custom text-lg leading-5"
+                                    >
+                                        The experts behind <br />the innovation
+                                    </p>
+                                </div>
+                                <div class="flex flex-col flex-1">
+                                    <div class="h-[66px] mb-4 flex items-end">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="64"
+                                            height="61"
+                                            viewBox="0 0 64 61"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M0.00929194 21.392H2.1325V6.95236C2.1325 5.23335 3.82828 3.34244 5.33822 2.65948C5.69596 2.49687 6.33246 2.41324 6.55082 2.27387C6.66697 2.19953 7.02007 1.34002 7.26166 1.0752C9.5196 -1.41968 13.8543 1.01945 12.6603 4.35062C11.6986 7.04064 7.78201 7.1986 6.74596 4.52716C5.69132 4.35991 4.26036 6.17184 4.26036 7.07316V21.3874H7.51254V24.5745C7.51254 25.1646 8.22337 26.9719 8.53465 27.5526C11.8054 33.5831 21.5666 33.4855 24.6562 27.3482C25.0557 26.5584 25.6318 24.8068 25.6318 23.952V21.3874H27.7551C27.6296 17.3547 27.9223 13.2198 27.7597 9.19637C27.7318 8.45766 27.6807 6.86409 27.4391 6.26476C27.1371 5.50746 26.1568 4.61079 25.3299 4.50393C23.8199 7.82116 18.858 6.5621 19.2669 2.84067C19.5503 0.280742 22.9279 -0.820354 24.6934 1.01016C25.0046 1.33538 25.2462 2.08338 25.4042 2.23205C25.5064 2.32497 26.7469 2.66877 27.1604 2.91501C28.6424 3.7931 29.8736 5.68866 29.8736 7.45413V21.392H31.9968C32.113 24.0263 31.9411 26.4376 30.9283 28.886C29.0745 33.3787 24.9442 36.7005 20.2611 37.9085C20.1403 39.9992 20.735 42.9308 18.7372 44.3199C18.1936 44.6963 17.6686 44.7056 17.1158 44.975C16.6001 50.0624 18.937 55.526 23.6619 57.7886C31.667 61.6262 39.0401 55.0196 39.4954 46.9542C39.895 39.8087 39.0262 32.1893 39.4908 25.0763C39.9322 18.2932 47.4168 13.7308 53.359 17.7171C56.7459 19.989 57.8935 23.9334 57.6333 27.8825C62.939 28.6909 65.7824 34.7957 62.7764 39.358C60.6532 42.5777 56.4021 43.6788 52.9966 41.8297C46.6642 38.3963 48.4157 28.8674 55.4915 27.8825C55.6216 25.3179 55.3243 22.8323 53.6238 20.8206C49.4192 15.854 42.3341 18.9622 41.6372 24.9648C41.312 32.245 42.0182 39.8366 41.6279 47.0796C40.8521 61.3707 23.3785 66.4301 16.6837 53.7652C15.2063 50.9776 14.8625 48.0321 14.8578 44.9053C11.2665 44.3664 11.7404 40.6775 11.7311 37.9038C6.49043 36.5705 2.10463 32.626 0.534287 27.4132L0 24.8858V21.3874L0.00929194 21.392ZM8.79483 3.97894C9.70544 5.0568 11.5685 3.32386 10.1933 2.39001C9.1154 1.65595 8.05147 3.0962 8.79483 3.97894ZM22.3425 2.1763C20.9673 2.24599 21.0556 4.56898 22.6956 4.26234C23.792 4.05792 23.6759 2.10661 22.3425 2.1763ZM5.38468 23.5153H2.1325C2.37409 33.9641 14.1842 39.2976 23.0115 34.582C27.0489 32.4262 29.8922 28.1798 29.8829 23.5153H27.7597C27.5739 30.1915 22.1055 34.5727 15.564 34.1453C9.99814 33.7829 5.27783 29.1833 5.38468 23.5153ZM56.365 29.9221C49.3031 30.1265 49.6144 41.2861 57.322 40.5149C63.5616 39.8877 63.2735 29.7223 56.365 29.9221ZM18.1332 38.2662C18.0403 38.2337 17.9846 38.3917 17.9474 38.3917H14.0727C14.0355 38.3917 13.9751 38.2337 13.8868 38.2662V41.3279C13.8868 41.6067 14.2399 42.3965 14.5233 42.5684C15.0576 42.8936 17.1715 42.8983 17.6501 42.4615C17.8173 42.3082 18.1425 41.4952 18.1425 41.3279V38.2662H18.1332Z"
+                                                fill="#009CDE"
+                                            />
+                                            <path
+                                                d="M54.3022 32.9372C57.2524 30.0474 61.8566 34.5866 58.7624 37.5832C55.8215 40.4358 51.2777 35.9014 54.3022 32.9372ZM57.3453 35.9803C58.1212 35.0558 57.0294 33.7131 55.9422 34.3868C54.5763 35.237 56.4022 37.1 57.3453 35.9803Z"
+                                                fill="#009CDE"
+                                            />
+                                        </svg>
+                                    </div>
+
+                                    <p
+                                        class="text-[17px] leading-[19px] font-medium"
+                                    >
+                                        <span>948</span><br />Physicians
+                                        involved<br />
+                                        in research
+                                    </p>
+                                </div>
+                                <div class="flex flex-col flex-1">
+                                    <div class="h-[66px] mb-4 flex items-end">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="80"
+                                            height="57"
+                                            viewBox="0 0 80 57"
+                                            fill="none"
+                                        >
+                                            <g clip-path="url(#clip0_496_2)">
+                                                <path
+                                                    d="M79.739 42.5901C80.0577 45.4617 80.1273 47.5687 79.739 49.1679C79.3507 50.7672 78.0816 51.631 76.3779 51.8119L61.5427 51.8294C61.8672 54.4851 60.2098 56.7029 57.5557 56.9831L22.4264 57.0006C20.2011 56.8547 18.2946 55.0687 18.3004 52.7749H3.43621C1.89474 52.7282 0.39383 51.5609 0.133055 49.9967C-0.0813603 48.7068 0.00556472 45.6251 0.0866947 44.2302C0.747325 33.415 11.9201 26.5745 21.8701 30.6135C22.3801 30.8177 24.0606 31.8566 24.4083 31.7633C32.5329 23.2944 46.551 23.0434 54.9248 31.2788C63.9302 25.1212 76.4243 29.5629 79.2233 40.2088C79.2233 40.2088 79.6695 41.9889 79.7332 42.5901H79.739ZM37.8643 27.9111C30.7538 28.5415 24.1765 33.8586 21.8701 40.629C20.5894 44.4053 20.7806 48.4909 20.7691 52.3839C20.7691 53.0084 21.1515 53.9773 21.7542 54.2224L57.4166 54.3508C58.622 54.345 58.9755 53.271 59.045 52.2321C59.1436 50.7672 59.0972 48.5551 59.045 47.0493C58.6336 35.3703 49.5644 26.8722 37.8527 27.9111H37.8643ZM61.5369 49.1738H76.7024C76.8995 49.1738 77.0733 48.6835 77.0965 48.4792C77.4268 46.0162 77.1486 41.6271 76.233 39.31C73.1849 31.629 63.5072 28.594 56.7155 33.2749C60.4243 37.6932 61.902 43.4364 61.5369 49.1738ZM18.2946 50.1135C17.8716 44.2477 19.0711 38.6913 22.4902 33.9111C15.1885 29.2769 4.82121 33.666 2.99579 42.1524C2.64809 43.7574 2.5148 47.7963 2.72922 49.4189C2.75819 49.6232 2.92625 50.1135 3.12328 50.1135H18.2888H18.2946Z"
+                                                    fill="#009CDE"
+                                                />
+                                                <path
+                                                    d="M38.7975 0.0296039C53.934 -0.898412 55.7942 21.8292 41.0807 23.6386C24.8199 25.6288 22.7105 1.01599 38.7975 0.0296039ZM46.0876 18.409C54.3455 10.1736 42.5179 -2.71359 33.5414 4.75139C23.6319 12.9985 37.0648 27.409 46.0876 18.409Z"
+                                                    fill="#009CDE"
+                                                />
+                                                <path
+                                                    d="M63.0608 8.17134C74.4827 7.03321 77.16 23.8659 66.022 26.3523C53.3658 29.1772 50.2944 9.44955 63.0608 8.17134ZM62.7421 10.8328C60.4241 11.148 58.1061 13.3426 57.5382 15.6188C56.0489 21.5721 62.4987 26.2005 67.5925 22.9204C73.6193 19.039 70.1423 9.82309 62.7479 10.8328H62.7421Z"
+                                                    fill="#009CDE"
+                                                />
+                                                <path
+                                                    d="M14.9973 8.80234C25.8977 7.72257 29.1024 23.6739 18.567 26.814C5.63259 30.6661 1.69779 10.1214 14.9973 8.80234ZM14.6844 11.458C7.4754 12.4502 7.4754 23.5455 14.6844 24.5377C24.9937 25.9502 24.9821 10.0455 14.6844 11.458Z"
+                                                    fill="#009CDE"
+                                                />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_496_2">
+                                                    <rect
+                                                        width="80"
+                                                        height="57"
+                                                        fill="white"
+                                                    />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+
+                                    <p
+                                        class="text-[17px] leading-[19px] font-medium"
+                                    >
+                                        <span>5,272 </span><br />
+                                        Research <br />personnel
+                                    </p>
+                                </div>
+                                <div class="flex flex-col flex-1">
+                                    <div class="h-[66px] mb-4 flex items-end">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="47"
+                                            height="66"
+                                            viewBox="0 0 47 66"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M8.99096 51.8348C8.52809 51.7353 8.42357 51.2376 8.38375 50.8444C8.30411 49.9784 8.2643 47.5196 8.39868 46.7183C8.44348 46.4595 8.61767 46.0812 8.88146 46.0016L31.9655 46.0464C32.4035 46.3699 32.5926 46.9124 32.6325 47.445C36.7585 46.4296 39.919 42.7217 40.586 38.5508C41.437 33.2302 38.3462 28.1087 33.3293 26.2871C32.9858 26.2423 32.3388 26.8445 31.9655 26.9988C30.771 27.5015 29.6113 27.3074 28.367 27.2576L23.9772 34.9971C23.151 35.6342 22.489 34.7731 21.7026 34.584C21.4239 34.7184 19.3584 38.8444 18.8856 39.4965C18.4874 40.0489 18.1489 40.1286 17.477 39.8797C15.1577 38.2074 11.9374 37.0676 9.67283 35.4301C9.15521 35.0568 9.04073 34.7731 9.25973 34.1261L12.0967 29.1191C12.0718 28.8354 10.3597 28.4721 10.5389 27.4219L21.6429 7.74219C22.5189 6.70695 23.5292 8.19014 24.1962 8.24987C24.3903 8.26977 24.4649 8.12544 24.5645 7.99603C25.107 7.29923 25.5151 6.0201 26.0825 5.26855C26.0626 5.04955 24.8482 4.84549 25.0921 3.87494C25.1568 3.60618 26.9038 0.505408 27.1078 0.286413C27.4662 -0.101805 28.0833 -0.0619875 28.5064 0.206779C31.423 2.03837 34.5885 3.50166 37.515 5.31832C38.1471 5.71151 38.9982 5.99521 38.6996 6.94585C38.61 7.22955 37.0323 10.0118 36.8232 10.2656C36.002 11.2561 35.0812 10.1362 34.8971 10.2706L33.3143 13.451C33.9116 13.8293 35.1758 14.1578 35.1708 14.9989C35.1658 15.8002 33.1152 18.4829 33.1849 18.8413C33.5035 19.0851 33.827 19.7371 34.1057 19.9213C34.6432 20.2797 36.4051 20.6977 37.2114 21.081C48.5842 26.4762 50.4457 42.2687 40.6905 50.2322C38.8887 51.7004 36.9477 52.671 34.7826 53.4972L35.8228 56.3043C36.2409 56.583 40.1729 56.1948 41.0886 56.369C41.6113 56.4686 41.7904 57.031 41.8302 57.4939C41.9696 58.997 41.9995 62.5606 41.8302 64.0289C41.7805 64.4569 41.5913 64.7904 41.1981 64.9994L1.12208 65.0342C0.370526 65.0293 0.186371 64.7207 0.121668 64.0338C-0.0226696 62.466 -0.0575097 58.763 0.121668 57.2301C0.156508 56.9364 0.211256 56.6876 0.470068 56.5134L17.2282 56.374L18.7761 51.8348H8.98599H8.99096ZM36.4898 6.82142L28.1729 2.15285L27.3268 3.70572L35.6337 8.53854C35.8029 8.26977 36.644 7.04042 36.4898 6.82142ZM25.978 9.33986L31.6271 12.3958L33.2845 9.42447L27.7748 6.14453L25.978 9.33489V9.33986ZM33.0356 15.3373L22.6483 9.60863L12.8433 27.3273L23.0415 33.051L26.7743 26.3219C25.6296 24.9482 24.9726 23.6691 25.1866 21.8076C25.4206 19.7869 27.3517 17.9255 29.3674 17.7313C30.129 17.6567 30.8307 17.8657 31.5624 17.801L33.0257 15.3373H33.0356ZM29.2729 19.6326C26.5006 20.1104 26.1671 24.4455 29.0439 25.3962C33.6876 26.9242 34.5288 18.7318 29.2729 19.6326ZM34.1057 51.5661C39.2421 50.3715 43.4329 45.703 44.6921 40.6512C46.6432 32.8121 42.4623 24.9532 34.9667 22.1361L34.3695 24.7989C39.8344 26.735 43.2189 32.7176 42.4773 38.4363C41.8302 43.4234 38.2367 47.7038 33.4388 49.182L34.1057 51.5661ZM13.784 29.9951L11.3252 34.1908L17.6512 37.849L20.1099 33.6533L13.784 29.9951ZM20.1149 47.7088H10.2552V49.9734H19.448L20.1149 47.7088ZM33.8369 56.364L30.9104 47.8979L22.1954 47.8282L19.1842 56.364H33.8369ZM39.9638 58.2305H1.99806V63.1579H39.9638V58.2305Z"
+                                                fill="#009CDE"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <p
+                                        class="text-[17px] leading-[19px] font-medium"
+                                    >
+                                        <span>321 </span><br />
+                                        Scientific faculty<br />
+                                        (career scientists)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="h-1/3 iconContainer">
+                                <div class="min-w-[205px] mr-7">
+                                    <h3 class="iconTitle">FACILITIES</h3>
+                                    <p
+                                        class="font-medium custom text-lg leading-5"
+                                    >
+                                        Where discovery happens
+                                    </p>
+                                </div>
+                                <div class="flex flex-col flex-1">
+                                    <div class="h-[100px] mb-4 flex items-end">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="58"
+                                            height="81"
+                                            viewBox="0 0 58 81"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M12.0218 80.323C8.89189 79.5371 7.41424 77.4953 7.1926 74.3318V33.9048C7.11871 33.5219 3.44475 27.7121 3.05519 27.2957C2.76638 26.9867 1.97382 26.8524 1.50366 26.5098C-1.38446 24.4277 0.187216 20.0015 3.67983 19.9746H54.1817C58.2184 19.9746 59.5147 25.1531 55.8071 26.8994L55.6526 27.2151C55.431 30.5331 55.9482 34.2204 55.6593 37.4847C55.5653 38.5325 55.0481 39.5736 53.819 38.9959C53.6645 38.922 53.3153 38.5325 53.3153 38.4116V27.3695L53.0802 27.1345H20.5116C20.4511 27.1345 19.9877 26.6039 19.9272 26.4695C19.5578 25.6232 20.263 24.8307 21.1295 24.7971H54.7862C56.2437 24.1456 55.7735 22.2918 54.175 22.3053L3.53207 22.3254C2.17532 22.5135 1.91338 24.0851 3.08878 24.7702L15.9846 24.8105C17.5563 25.059 17.0525 27.1345 16.307 27.1345H5.78883L9.52325 33.2868V74.1907C9.68444 76.2863 10.5039 77.7102 12.7203 77.999H50.1316C52.2272 77.7505 53.1675 76.3535 53.3287 74.3452V42.9184C53.5235 41.1452 55.8743 41.837 55.6661 43.5363C55.0952 53.6179 56.4116 64.5055 55.6593 74.493C55.4511 77.2468 53.7653 79.9334 50.8301 80.3297H12.0285L12.0218 80.323Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M48.4862 47.1158L48.1638 46.9412C41.454 48.9696 34.7173 47.4919 28.1485 45.7792L27.947 45.8329C26.5902 48.2039 22.6946 47.7606 21.8147 45.2016L21.6132 45.1613C19.2087 45.1546 16.8579 45.6314 14.5205 46.115V62.2012C14.6683 63.84 12.3712 64.3572 12.1697 62.6714C12.5862 57.0899 11.6257 50.7293 12.1697 45.2419C12.2705 44.1941 12.9556 44.2142 13.8287 43.9389C16.287 43.1799 19.1012 42.9112 21.667 42.8172C22.4259 39.8686 26.382 39.3111 28.0477 41.85C28.3365 42.2866 28.538 43.2739 28.8 43.4351C31.4261 44.1001 34.0523 44.9396 36.7457 45.3023C39.795 45.712 42.9786 45.6785 46.0011 45.0941C46.9952 44.906 49.1243 44.0799 49.9639 44.2344C50.6691 44.3687 50.7833 45.2553 50.8303 45.8598C50.3534 54.1145 51.4482 63.0475 50.8303 71.2216C50.6825 73.1761 49.9706 74.6 48.0564 75.2918C37.2225 75.7284 26.2813 75.4127 15.4138 75.453C13.869 75.1843 12.3578 73.9082 12.1765 72.3029C12.0959 71.5977 12.1026 67.2722 12.3242 66.8894C12.6533 66.3319 13.8287 66.3453 14.2049 66.8894C15.2862 68.461 13.2713 72.7798 15.8504 73.1425L47.4787 73.0149C47.9623 72.9074 48.4795 71.9335 48.4795 71.5238V47.1024L48.4862 47.1158ZM24.9111 42.562C23.3125 42.7164 23.5073 45.4299 25.4618 44.9866C26.7984 44.6777 26.4492 42.4209 24.9111 42.562Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M20.1754 7.79052C16.5753 4.38522 21.3777 -1.56566 25.4949 1.47023C30.1965 4.93598 24.4001 11.7936 20.1754 7.79052ZM22.7344 3.05534C20.6322 3.39789 20.9344 6.81662 23.2986 6.59497C25.6629 6.37333 25.2666 2.64563 22.7344 3.05534Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M33.7367 68.4477C30.3448 65.0491 35.6308 59.9109 38.8883 63.3834C42.1122 66.8223 36.9741 71.6851 33.7367 68.4477ZM35.9733 64.6394C34.8046 64.8812 34.7106 66.6611 35.8524 67.0305C37.9144 67.6954 38.0353 64.2095 35.9733 64.6394Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M34.5759 4.3039C40.1305 3.35687 40.473 11.2018 35.5901 11.3832C31.137 11.5511 30.734 4.96213 34.5759 4.3039ZM35.0393 6.63455C33.9378 6.88307 33.9916 8.8846 35.3752 9.01222C37.1215 9.1667 37.2558 6.13753 35.0393 6.63455Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M31.1306 16.5011C27.7992 19.8258 22.6476 14.654 26.0596 11.3629C29.4716 8.07179 34.4352 13.2033 31.1306 16.5011ZM28.3433 12.6928C26.8522 13.0018 27.0604 15.3727 28.7597 15.1511C30.459 14.9294 29.9754 12.357 28.3433 12.6928Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M41.5141 36.5707C40.5604 35.7983 41.326 34.6094 42.4947 34.4549C43.8246 34.2736 48.1568 34.2669 49.48 34.4549C51.0852 34.6766 51.0046 36.5774 49.9568 36.7722C47.4851 36.6177 44.7582 36.9871 42.3201 36.7856C42.0313 36.7587 41.7559 36.7722 41.5141 36.5774V36.5707Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M41.8972 39.4517L49.9638 39.4248C51.0452 39.6263 51.1862 41.554 49.1847 41.7487C47.7003 41.8965 43.9458 41.9301 42.5017 41.7353C41.0576 41.5405 40.5472 40.1368 41.8972 39.4517Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M42.2063 29.6518C43.1668 29.4571 48.6206 29.4705 49.6147 29.6518C51.0386 29.9071 51.1528 31.781 49.655 31.9489C47.2975 32.2176 44.4362 31.7407 42.0183 31.9422C40.7488 31.4787 40.8899 29.9138 42.2063 29.6518Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M44.2348 52.6636C45.7863 52.3412 46.196 54.6517 44.7855 54.9405C43.2004 55.2629 42.737 52.9725 44.2348 52.6636Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M19.4573 50.642C21.4924 50.0307 21.4655 53.4965 19.4976 52.8786C18.3961 52.5293 18.5103 50.9308 19.4573 50.642Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M31.2985 55.4642C32.7627 55.2694 33.0717 57.506 31.7284 57.7679C30.0694 58.0903 29.6865 55.6791 31.2985 55.4642Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M23.8164 65.5051C22.7484 66.5797 21.0894 64.9879 22.0701 63.8461C23.0507 62.7043 24.9515 64.37 23.8164 65.5051Z"
+                                                fill="#FB09FF"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <p
+                                        class="text-[17px] leading-[19px] font-medium"
+                                    >
+                                        <span>27 </span><br />Core research<br />
+                                        laboratories
+                                    </p>
+                                </div>
+                                <div class="flex flex-col flex-1">
+                                    <div class="h-[100px] mb-4 flex items-end">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="59"
+                                            height="59"
+                                            viewBox="0 0 59 59"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M50.0238 0.00683594H59V8.98307C58.7669 9.20893 58.6503 9.58051 58.2569 9.56594C55.6922 9.37651 52.8289 9.79909 50.3079 9.56594C49.6522 9.50765 49.5065 9.36922 49.4482 8.7062C49.2151 6.18528 49.6376 3.31464 49.4482 0.757283C49.4336 0.37113 49.7979 0.24727 50.0311 0.0141206L50.0238 0.00683594ZM57.1567 1.85017H51.2915V7.71532H57.1567V1.85017Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M9.06577 0.00728746C9.29164 0.240436 9.66322 0.357011 9.64865 0.75045C9.45921 3.31509 9.88179 6.17845 9.64865 8.69937C9.59036 9.36239 9.43736 9.50082 8.78891 9.55911C6.30442 9.78497 3.47749 9.36967 0.94928 9.55911C0.431981 9.59554 0.14783 9.1511 0.0895429 8.69208C-0.194607 6.28773 0.30812 3.32966 0.0895429 0.859737C0.0895429 0.437154 0.373694 0.233149 0.66513 0H9.06577V0.00728746ZM7.79803 1.85062H1.93288V7.71577H7.79803V1.85062Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M58.999 49.9412V58.3419C58.7658 58.6333 58.5618 58.9248 58.1392 58.9175C55.6693 58.6989 52.7185 59.2016 50.3069 58.9175C49.8479 58.8665 49.4034 58.575 49.4399 58.0577C49.6293 55.5295 49.214 52.7099 49.4399 50.2181C49.4982 49.5624 49.6366 49.4167 50.2996 49.3584C52.8205 49.1252 55.6912 49.5478 58.2485 49.3584C58.6347 49.3438 58.7585 49.7081 58.9917 49.9412H58.999ZM57.1556 51.2017H51.2905V57.0669H57.1556V51.2017Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M16.5397 15.0807L29.5805 28.0705L42.5411 15.139C41.6159 14.9933 39.1316 16.0497 38.8766 14.6509C38.7017 13.6747 39.627 13.5945 40.3118 13.4853C41.9 13.2375 43.5392 13.1865 45.1274 12.917C45.6738 12.9607 46.0381 13.3323 46.0818 13.8714C45.8049 15.4596 45.7758 17.0988 45.5135 18.687C45.3969 19.3718 45.3314 20.297 44.3479 20.1222C42.9491 19.8672 44.0054 17.3902 43.8597 16.4577L30.9283 29.4183L43.8597 42.4591C44.0054 41.5338 42.9491 39.0495 44.3479 38.7945C45.3314 38.6197 45.3969 39.5449 45.5135 40.2297C45.7831 41.818 45.8049 43.4572 46.0818 45.0454C46.0381 45.5918 45.6665 45.956 45.1274 45.9997C43.5392 45.7229 41.9 45.6792 40.3118 45.4315C39.627 45.3222 38.7017 45.2421 38.8766 44.2658C39.1316 42.867 41.6086 43.9234 42.5411 43.7777L29.5805 30.8462L16.5397 43.7777C17.4649 43.9234 19.9565 42.867 20.2042 44.2658C20.3718 45.2129 19.4247 45.3222 18.769 45.4315C17.1808 45.6865 15.5416 45.7302 13.9534 45.9997C13.407 45.956 13.0427 45.5845 12.999 45.0454C13.2759 43.4572 13.305 41.818 13.5673 40.2297C13.6838 39.5449 13.7494 38.6197 14.7329 38.7945C16.1317 39.0495 15.0753 41.5265 15.2211 42.4591L28.1525 29.4984L15.2211 16.4577C15.0535 17.3683 16.1536 19.8672 14.7329 20.1222C13.7494 20.297 13.6838 19.3645 13.5673 18.687C13.2977 17.0988 13.2759 15.4596 12.999 13.8714C13.0427 13.325 13.4143 12.9607 13.9534 12.917L19.738 13.6747C20.6486 14.2284 20.1387 15.4596 19.1406 15.4304C18.3538 15.4086 17.3629 15.1172 16.547 15.0807H16.5397Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M0.636455 49.3867L9.19011 49.4159C9.58354 49.5616 9.61269 49.8457 9.64912 50.2246C9.88227 52.7455 9.45968 55.6162 9.64912 58.1735C9.59083 58.7127 9.14639 58.8802 8.6728 58.924C6.22474 59.1498 3.44153 58.7418 0.957033 58.924C0.432448 58.8875 0.155585 58.567 0.0972978 58.0642C-0.179566 55.6453 0.315875 52.7091 0.0972978 50.2319C0.11187 49.8822 0.330445 49.5616 0.643739 49.394L0.636455 49.3867ZM7.7985 51.2009H1.93334V57.0661H7.7985V51.2009Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M27.3221 3.9476C27.7884 3.84559 31.2929 3.84559 31.7592 3.9476C32.7501 4.16617 32.5388 5.6015 31.5479 5.7545C30.9796 5.84193 27.9487 5.84922 27.4387 5.73993C26.5425 5.53592 26.3604 4.15889 27.3221 3.9476Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M4.66437 26.607C5.27639 26.4832 5.77912 26.9786 5.84469 27.5615C5.92484 28.2099 5.94669 31.0004 5.81555 31.5687C5.60426 32.5159 4.1325 32.6835 3.99407 31.4813C3.89936 30.6799 3.88478 28.1079 4.00136 27.3429C4.05236 27.0078 4.31465 26.6799 4.65709 26.607H4.66437Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M27.4387 53.182C27.8905 53.08 31.1983 53.08 31.65 53.182C32.5972 53.3933 32.7137 54.8286 31.6646 54.9889C31.0671 55.0836 27.8613 55.0909 27.3222 54.9743C26.3604 54.763 26.5353 53.386 27.4387 53.182Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M54.0158 26.6059C54.606 26.482 55.014 26.8755 55.0868 27.4438C55.1815 28.2379 55.1961 30.8244 55.0795 31.5821C54.9047 32.6896 53.3819 32.5293 53.2435 31.3636C53.1561 30.6131 53.1415 28.1723 53.2508 27.4583C53.3091 27.1013 53.6661 26.6787 54.0158 26.6059Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M24.5611 53.4314C25.1076 53.9341 24.8088 54.8813 24.073 54.9979C23.3808 55.1072 20.5174 55.1072 19.8326 54.9979C18.8344 54.8376 18.9 53.3367 19.9491 53.1691C20.6777 53.0525 23.0894 53.0744 23.8544 53.1618C24.0657 53.1837 24.4081 53.293 24.5611 53.4314Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M24.5612 5.49219C24.4082 5.63062 24.0658 5.73991 23.8545 5.76176C23.053 5.8492 20.8454 5.85648 20.0658 5.74719C18.8199 5.57233 18.8563 4.07872 19.8326 3.92572C20.5175 3.81643 23.3882 3.81643 24.073 3.92572C24.8089 4.04229 25.1076 4.98946 24.5612 5.49219Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M34.5268 5.49219C33.9803 4.98946 34.2791 4.04229 35.0149 3.92572C35.7071 3.81643 38.5705 3.81643 39.2553 3.92572C40.2316 4.07872 40.2681 5.57233 39.0222 5.74719C38.2426 5.85648 36.035 5.8492 35.2335 5.76176C35.0222 5.73991 34.6798 5.63062 34.5268 5.49219Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M5.57617 24.4801C5.07344 25.0266 4.12628 24.7279 4.0097 23.992C3.90041 23.2998 3.90041 20.4365 4.0097 19.7516C4.1627 18.7753 5.65631 18.7388 5.83118 19.9847C5.94046 20.7643 5.93318 22.972 5.84575 23.7734C5.82389 23.9847 5.7146 24.3271 5.57617 24.4801Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M53.5128 24.4801C53.3744 24.3271 53.2651 23.9847 53.2433 23.7734C53.1558 22.972 53.1485 20.7643 53.2578 19.9847C53.4327 18.7388 54.9263 18.7753 55.0793 19.7516C55.1886 20.4365 55.1886 23.3071 55.0793 23.992C54.9627 24.7279 54.0156 25.0266 53.5128 24.4801Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M5.57617 34.4457C5.7146 34.5987 5.82389 34.9412 5.84575 35.1525C5.93318 35.9539 5.94046 38.1615 5.83118 38.9411C5.65631 40.187 4.1627 40.1506 4.0097 39.1743C3.90041 38.4894 3.90041 35.6188 4.0097 34.9339C4.12628 34.198 5.07344 33.8993 5.57617 34.4457Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M53.5128 34.4457C54.0156 33.8993 54.9627 34.198 55.0793 34.9339C55.1886 35.626 55.1886 38.4894 55.0793 39.1743C54.9263 40.1506 53.4327 40.187 53.2578 38.9411C53.1485 38.1615 53.1558 35.9539 53.2433 35.1525C53.2651 34.9412 53.3744 34.5987 53.5128 34.4457Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M34.5268 53.4318C34.6798 53.2934 35.0222 53.1841 35.2335 53.1622C36.035 53.0748 38.2426 53.0675 39.0222 53.1768C40.2681 53.3516 40.2316 54.8453 39.2553 54.9983C38.5705 55.1075 35.6998 55.1075 35.0149 54.9983C34.2791 54.8817 33.9803 53.9345 34.5268 53.4318Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M12.3726 53.1901C12.9846 53.0808 15.8625 53.0662 16.4599 53.1901C17.327 53.3649 17.5528 54.4942 16.8388 54.895C16.1612 55.2738 13.1011 54.8585 12.1394 54.9824C11.3088 54.5161 11.3525 53.3722 12.3726 53.1901Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M12.1391 3.94088H16.6928C17.589 4.43632 17.385 5.59478 16.3649 5.74778C15.6873 5.84978 13.0353 5.8425 12.3722 5.72593C11.4032 5.55106 11.3012 4.37075 12.1391 3.93359V3.94088Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M42.3949 3.94141H46.9486C47.8375 4.44413 47.6699 5.60259 46.6135 5.74831C45.9432 5.84303 43.2474 5.8576 42.6208 5.73374C41.6664 5.54431 41.5425 4.37856 42.3877 3.94141H42.3949Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M4.54091 11.5394C5.30593 11.3135 5.75766 11.7725 5.8378 12.4938C5.92523 13.2588 5.93981 15.5539 5.83052 16.2825C5.64837 17.4774 4.12562 17.4264 3.99447 16.4136C3.90704 15.7798 3.89247 12.7343 4.00175 12.1514C4.03818 11.9547 4.35148 11.5977 4.54091 11.5394Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M53.8993 11.5395C54.4749 11.4084 55.0068 11.6634 55.0869 12.2535C55.1744 12.8947 55.1889 15.9329 55.0796 16.5158C54.9121 17.3974 53.3966 17.4921 53.2363 16.1734C53.1416 15.401 53.1416 13.1497 53.2509 12.3847C53.3092 11.984 53.4767 11.6342 53.8993 11.5395Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M4.54091 41.7951C5.27679 41.5693 5.75766 42.0428 5.84509 42.7496C5.93252 43.4927 5.93981 45.9335 5.81594 46.6403C5.61923 47.7404 4.12562 47.653 3.99447 46.6767C3.90704 46.0428 3.89247 42.9973 4.00175 42.4144C4.03818 42.2177 4.35148 41.8607 4.54091 41.8024V41.7951Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M53.8992 41.7964C54.4748 41.6652 55.0067 41.9202 55.0868 42.5104C55.1743 43.1515 55.1888 46.1898 55.0795 46.7726C54.9192 47.6324 53.3965 47.7854 53.2435 46.4302C53.1561 45.6652 53.1415 43.3774 53.2508 42.6415C53.3018 42.2918 53.5349 41.8765 53.8992 41.7964Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M42.6291 53.1901C43.1828 53.0808 46.2721 53.0881 46.8112 53.212C47.62 53.4087 47.7657 54.5162 47.0954 54.895C46.4251 55.2739 43.3577 54.8586 42.396 54.9825C41.5508 54.5526 41.6747 53.3868 42.6291 53.1901Z"
+                                                fill="#FB09FF"
+                                            />
+                                        </svg>
+                                    </div>
+
+                                    <p
+                                        class="text-[17px] leading-[19px] font-medium"
+                                    >
+                                        <span
+                                            >479,188
+                                            <span class="sub"
+                                                >sq ft</span
+                                            > </span
+                                        ><br />
+                                        Research laboratory <br />space
+                                    </p>
+                                </div>
+                                <div class="flex flex-col flex-1">
+                                    <div class="h-[100px] mb-4 flex items-end">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="98"
+                                            height="98"
+                                            viewBox="0 0 98 98"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M83.0957 0H97.9999V14.9042C97.6117 15.285 97.414 15.8929 96.7695 15.8709C92.5143 15.556 87.7537 16.2518 83.5644 15.8709C82.4805 15.7684 82.2315 15.5414 82.129 14.4354C81.7481 10.2462 82.4366 5.48561 82.129 1.23042C82.107 0.585913 82.7149 0.388168 83.0957 0ZM94.9385 3.0614H85.1904V12.8095H94.9385V3.0614Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M15.063 0C15.4438 0.388168 16.0517 0.585913 16.0297 1.23042C15.7148 5.48561 16.4106 10.2462 16.0297 14.4354C15.9272 15.534 15.6782 15.7684 14.5942 15.8709C10.4636 16.2518 5.77625 15.5633 1.57965 15.8709C0.715423 15.9295 0.246693 15.1898 0.151482 14.4281C-0.324573 10.4293 0.517678 5.52223 0.151482 1.42816C0.151482 0.725068 0.620213 0.388168 1.11092 0H15.063ZM12.961 3.0614H3.21288V12.8095H12.961V3.0614Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M97.9999 82.9356V96.8876C97.6118 97.3783 97.2749 97.8544 96.5718 97.8471C92.4704 97.4809 87.5707 98.3231 83.5718 97.8471C82.8101 97.7592 82.0704 97.2831 82.129 96.4189C82.4439 92.2223 81.7555 87.535 82.129 83.4043C82.2315 82.3204 82.4586 82.0713 83.5645 81.9688C87.7538 81.588 92.5143 82.2764 96.7695 81.9688C97.414 81.9468 97.6118 82.5547 97.9999 82.9356ZM94.9385 85.0375H85.1904V94.7857H94.9385V85.0375Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M27.4846 25.0399L49.1488 46.6162L70.6738 25.1278C69.1284 24.8861 65.0124 26.6438 64.5876 24.3221C64.2946 22.7036 65.8327 22.5644 66.9752 22.3886C69.6118 21.9712 72.3436 21.8979 74.9802 21.4365C75.8884 21.5098 76.489 22.125 76.5695 23.0258C76.1081 25.6624 76.0642 28.3942 75.6174 31.0309C75.427 32.1661 75.3171 33.7114 73.6839 33.4185C71.3549 33.001 73.1126 28.8776 72.8783 27.3323L51.3899 48.8573L72.8783 70.5214C73.12 68.9761 71.3622 64.86 73.6839 64.4352C75.3171 64.1423 75.427 65.6876 75.6174 66.8228C76.0569 69.4595 76.1008 72.1913 76.5695 74.8279C76.4963 75.736 75.8811 76.3366 74.9802 76.4172C72.3436 75.9631 69.6118 75.8825 66.9752 75.4651C65.8327 75.282 64.2946 75.1501 64.5876 73.5316C65.0051 71.2026 69.1284 72.9603 70.6738 72.7259L49.1488 51.2375L27.4846 72.7259C29.0226 72.9676 33.1533 71.2099 33.5708 73.5389C33.8491 75.1135 32.2818 75.2966 31.1832 75.4724C28.5393 75.8972 25.8221 75.9704 23.1782 76.4245C22.27 76.3513 21.6694 75.7361 21.5889 74.8352C22.0503 72.1986 22.0942 69.4668 22.541 66.8302C22.7314 65.695 22.8413 64.1496 24.4745 64.4426C26.8035 64.86 25.0458 68.9834 25.2801 70.5287L46.7685 49.0038L25.2801 27.3396C25.0018 28.8557 26.8328 33.001 24.4745 33.4258C22.8413 33.7187 22.7314 32.1734 22.541 31.0382C22.1015 28.4016 22.0576 25.6697 21.5889 23.0331C21.6621 22.1323 22.27 21.5244 23.1782 21.4438L32.7871 22.7036C34.2959 23.6264 33.4536 25.6697 31.7911 25.6258C30.4801 25.5892 28.8395 25.0985 27.4846 25.0472V25.0399Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M1.05308 82.0205L15.2615 82.0645C15.9133 82.3061 15.9646 82.7822 16.0232 83.4047C16.404 87.594 15.7156 92.3546 16.0232 96.6098C15.9206 97.5033 15.1809 97.7816 14.3973 97.8548C10.3325 98.2283 5.70377 97.5545 1.5804 97.8548C0.708853 97.7889 0.247447 97.2616 0.144912 96.4193C-0.316494 92.4058 0.503784 87.5281 0.144912 83.4194C0.166884 82.8335 0.53308 82.3061 1.04575 82.0278L1.05308 82.0205ZM12.9618 85.038H3.21363V94.7861H12.9618V85.038Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M45.3921 6.54101C46.1758 6.36524 51.9837 6.36524 52.76 6.54101C54.4079 6.90721 54.0563 9.28748 52.4084 9.54382C51.471 9.69029 46.4321 9.70494 45.5826 9.51452C44.0885 9.17762 43.7955 6.89256 45.3921 6.54101Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M7.74757 44.1782C8.76559 43.9731 9.60052 44.7934 9.71038 45.7675C9.83488 46.8441 9.87883 51.4801 9.66643 52.4176C9.31488 53.9922 6.87602 54.2779 6.64165 52.2711C6.48785 50.9455 6.45856 46.6683 6.6563 45.4013C6.74419 44.8447 7.1763 44.2954 7.74024 44.1782H7.74757Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M45.5826 88.3353C46.3296 88.1669 51.8225 88.1669 52.5696 88.3353C54.1442 88.6869 54.342 91.0671 52.5989 91.3381C51.6101 91.4919 46.2857 91.5066 45.3921 91.3088C43.7955 90.95 44.0885 88.6649 45.5826 88.3353Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M89.7313 44.1794C90.7127 43.9744 91.3938 44.6262 91.5037 45.5783C91.6575 46.8966 91.6868 51.1884 91.4891 52.4481C91.2034 54.2791 88.6694 54.0228 88.435 52.0819C88.2885 50.8369 88.2592 46.7794 88.4496 45.5929C88.5448 45.007 89.1454 44.3039 89.724 44.1794H89.7313Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M40.7994 88.7377C41.7075 89.5726 41.2095 91.1473 39.9864 91.3377C38.8365 91.5135 34.0833 91.5208 32.9408 91.3377C31.2856 91.074 31.3881 88.5766 33.1312 88.3056C34.3397 88.1152 38.3532 88.1445 39.6202 88.2909C39.9718 88.3276 40.543 88.5033 40.7994 88.7377Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M40.7993 9.10939C40.543 9.34375 39.9717 9.51952 39.6202 9.55614C38.2945 9.70262 34.6253 9.71727 33.3289 9.53417C31.2563 9.24122 31.3148 6.76573 32.9408 6.50939C34.0833 6.3263 38.8438 6.3263 39.9864 6.50939C41.2095 6.69982 41.7075 8.28178 40.7993 9.10939Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M57.3523 9.11154C56.4441 8.27661 56.9421 6.70197 58.1652 6.51154C59.3151 6.33577 64.0683 6.32845 65.2108 6.51154C66.8367 6.76788 66.8953 9.25069 64.8227 9.53632C63.5263 9.71942 59.857 9.70477 58.5314 9.55829C58.1799 9.52167 57.6086 9.3459 57.3523 9.11154Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M9.27023 40.648C8.4353 41.5561 6.86066 41.0581 6.67024 39.835C6.49446 38.6851 6.48714 33.9319 6.67024 32.7894C6.92657 31.1635 9.40938 31.1049 9.69501 33.1776C9.87811 34.4739 9.86346 38.1432 9.71698 39.4688C9.68037 39.8204 9.50459 40.3916 9.27023 40.648Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M88.889 40.648C88.6546 40.3916 88.4788 39.8204 88.4422 39.4688C88.2957 38.1432 88.2811 34.4739 88.4642 33.1776C88.7571 31.1049 91.2326 31.1635 91.489 32.7894C91.6721 33.9319 91.6721 38.6925 91.489 39.835C91.2985 41.0581 89.7166 41.5561 88.889 40.648Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M9.27052 57.1994C9.50488 57.4558 9.68066 58.027 9.71728 58.3786C9.86376 59.7042 9.8784 63.3735 9.6953 64.6698C9.40235 66.7425 6.92686 66.6839 6.67053 65.058C6.48743 63.9155 6.48743 59.1549 6.67053 58.0124C6.86095 56.7893 8.44291 56.2913 9.27052 57.1994Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M88.889 57.1994C89.7239 56.2913 91.2985 56.7893 91.489 58.0124C91.6647 59.1622 91.6721 63.9155 91.489 65.058C91.2326 66.6839 88.7498 66.7425 88.4642 64.6698C88.2811 63.3735 88.2957 59.7042 88.4422 58.3786C88.4788 58.027 88.6546 57.4558 88.889 57.1994Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M57.3523 88.7371C57.6086 88.5027 58.1799 88.327 58.5314 88.2904C59.857 88.1439 63.5263 88.1292 64.8227 88.3123C66.8953 88.6053 66.8367 91.0808 65.2108 91.3371C64.0683 91.5202 59.3078 91.5202 58.1652 91.3371C56.9421 91.1467 56.4441 89.5647 57.3523 88.7371Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M20.556 88.3353C21.5813 88.1522 26.3565 88.1375 27.3452 88.3353C28.788 88.6282 29.1616 90.5031 27.9751 91.1696C26.8545 91.7995 21.7717 91.1037 20.1678 91.3088C18.7836 90.5397 18.8641 88.6429 20.556 88.3353Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M20.1682 6.54053H27.7338C29.2206 7.36081 28.891 9.287 27.1845 9.54333C26.0639 9.71178 21.6549 9.70446 20.5564 9.50671C18.9451 9.22108 18.7766 7.25095 20.1682 6.5332V6.54053Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M70.4251 6.54199H77.9907C79.4628 7.37692 79.1845 9.29578 77.4414 9.5448C76.3281 9.6986 71.8532 9.7279 70.8132 9.5155C69.2313 9.19325 69.0189 7.25974 70.4251 6.54199Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M7.55642 19.1525C8.83078 18.7716 9.57782 19.5333 9.71697 20.7344C9.86345 22.0015 9.89275 25.8099 9.70232 27.0257C9.39472 29.0105 6.86797 28.9226 6.64825 27.2381C6.5091 26.1761 6.4798 21.1299 6.6629 20.1632C6.72881 19.8336 7.24881 19.2403 7.55642 19.1451V19.1525Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M89.5326 19.1538C90.4921 18.9341 91.3782 19.3516 91.5101 20.3476C91.6492 21.4096 91.6785 26.4558 91.4954 27.4225C91.2171 28.8873 88.6977 29.0484 88.434 26.8586C88.2802 25.5696 88.2802 21.8344 88.456 20.5673C88.5512 19.9008 88.8222 19.3149 89.5326 19.1611V19.1538Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M7.5569 69.4107C8.78 69.0445 9.57831 69.8208 9.71746 70.9927C9.86394 72.2231 9.87859 76.2805 9.66619 77.4524C9.33662 79.2833 6.86113 79.1369 6.64141 77.511C6.50226 76.449 6.47297 71.4028 6.65606 70.4361C6.72198 70.1065 7.23465 69.5132 7.54958 69.418L7.5569 69.4107Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M89.5336 69.4101C90.493 69.1904 91.3792 69.6152 91.511 70.6039C91.6502 71.6659 91.6795 76.712 91.4964 77.6788C91.2254 79.107 88.6987 79.3633 88.4423 77.1075C88.2958 75.8332 88.2665 72.0394 88.457 70.8163C88.5449 70.2377 88.933 69.5493 89.5336 69.4101Z"
+                                                fill="#FB09FF"
+                                            />
+                                            <path
+                                                d="M70.8137 88.3336C71.7365 88.1505 76.8633 88.1578 77.7568 88.3702C79.0971 88.6924 79.3461 90.5381 78.2329 91.1606C77.1196 91.7832 72.0295 91.0947 70.4256 91.2998C69.0194 90.582 69.2244 88.6485 70.8137 88.3263V88.3336Z"
+                                                fill="#FB09FF"
+                                            />
+                                        </svg>
+                                    </div>
+
+                                    <p
+                                        class="text-[17px] leading-[19px] font-medium min-h-[67px]"
+                                    >
+                                        <span
+                                            >1,174,830
+                                            <span class="sub"
+                                                >sq ft</span
+                                            > </span
+                                        ><br />
+                                        Total research space
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="h-1/3 iconContainer">
+                                <div class="min-w-[205px] mr-7">
+                                    <h3 class="iconTitle">RESULTS</h3>
+                                    <p
+                                        class="font-medium custom text-lg leading-5"
+                                    >
+                                        Turning research into reality
+                                    </p>
+                                </div>
+                                <div class="flex justify-between w-full">
+                                    <div class="flex flex-col">
+                                        <div
+                                            class="h-[100px] mb-4 flex items-end"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="52"
+                                                height="65"
+                                                viewBox="0 0 52 65"
+                                                fill="none"
+                                            >
+                                                <g
+                                                    clip-path="url(#clip0_496_8)"
+                                                >
+                                                    <path
+                                                        d="M26.9237 0.0427609C28.8246 0.228108 29.9574 1.09306 31.0561 2.2099C31.6444 2.80872 32.2277 3.76397 32.5 4.84279C33.0639 4.84754 37.1185 4.78576 38.6305 4.78576C39.2431 4.78576 39.2188 5.37982 39.2188 5.89309V8.65905C42.1212 8.86816 45.991 8.11251 48.6844 9.33866C50.7214 10.2701 51.7958 11.981 51.9951 14.172L51.9854 60.2285C51.4701 63.3223 49.1851 64.7956 46.098 64.9905L5.64921 64.981C2.59125 64.6578 0.335453 63.1085 0 59.9908V14.4333C0.189604 11.0923 2.52319 8.92044 5.90688 8.6638C7.96335 8.50697 10.7053 8.79212 12.7812 8.6638V5.42735C12.7812 4.9616 12.8396 4.85229 13.3355 4.85229C14.2251 4.85229 18.445 4.85229 19.0284 4.88081C19.6458 3.26971 20.6862 1.61109 22.2614 0.831676C22.7865 0.570289 24.1283 0.109296 24.6825 0.0427609C25.2367 -0.0237742 26.3743 -0.00951668 26.9237 0.0427609ZM36.8901 6.9529C36.8901 6.9529 33.1612 6.94815 32.0819 6.9529C31.5034 6.9529 31.1339 6.36359 31.0512 6.27329C30.6185 5.77428 30.497 5.05665 30.0643 4.27724C28.4794 1.43049 23.574 1.60158 21.7752 4.31526C21.3183 4.99962 21.1481 5.80755 20.6717 6.29706C20.3605 6.61547 20.0153 6.89587 19.5681 6.96241L15.1148 6.9529V14.671H36.8901V6.9529ZM12.7861 10.8119H6.3104C4.43381 10.8119 2.31414 12.8983 2.20718 14.6947L2.19746 59.4823C2.38706 61.5021 4.56507 62.7093 6.43194 62.8471H45.6993C47.537 62.6665 49.6178 61.4641 49.8025 59.4823L49.7928 14.6947C49.6859 12.8983 47.5662 10.8119 45.6896 10.8119H39.2139V15.3363C39.2139 15.8496 38.6889 16.4389 38.0471 16.3438L13.4764 16.2821C12.9611 16.1823 12.7764 15.8068 12.7764 15.3316V10.8072L12.7861 10.8119ZM24.7895 52.9809L45.325 52.9429C46.7397 52.9809 46.9974 55.5045 45.0333 55.514C39.491 55.552 31.5957 55.6993 25.334 55.514C23.4622 55.647 23.822 52.9809 24.7895 52.9761V52.9809ZM24.7651 39.0466L45.3007 39.0085C46.7154 39.0466 46.9731 41.5701 45.009 41.5796C39.4667 41.6177 31.5714 41.765 25.3097 41.5796C23.4379 41.7127 23.7977 39.0466 24.7651 39.0418V39.0466ZM24.7408 25.1122L45.2764 25.0742C46.6911 25.1122 46.9488 27.6358 44.9847 27.6453C39.4424 27.6833 31.5471 27.8306 25.2853 27.6453C23.4136 27.7784 23.7734 25.1122 24.7408 25.1075V25.1122ZM7.38968 37.6113C7.81264 37.1978 8.35228 37.0125 8.79955 37.426C9.63089 38.1864 11.8138 40.3345 12.0957 40.268C12.4604 40.1824 18.3283 34.5364 18.3283 34.5364C19.0916 33.8045 21.0217 35.4584 20.1126 36.2901C19.6653 36.6988 14.439 41.7127 12.7715 43.4521C11.9402 44.0462 11.6825 43.281 10.8512 42.6917C10.4476 42.4018 7.43343 39.5171 7.07853 39.1796C6.51459 38.6473 6.73822 38.2529 7.39454 37.6113H7.38968ZM7.38968 23.677C7.81264 23.2635 8.35228 23.0781 8.79955 23.4916C9.63089 24.252 11.8138 26.4001 12.0957 26.3336C12.4604 26.2481 18.3283 20.6021 18.3283 20.6021C19.0916 19.8702 21.0217 21.5241 20.1126 22.3558C19.6653 22.7645 14.439 27.7784 12.7715 29.5178C11.9402 30.1119 11.6825 29.3467 10.8512 28.7574C10.4476 28.4675 7.43343 25.5827 7.07853 25.2453C6.51459 24.713 6.73822 24.3186 7.39454 23.677H7.38968ZM7.38968 51.5456C7.81264 51.1322 8.35228 50.9468 8.79955 51.3603C9.63089 52.1207 11.8138 54.2688 12.0957 54.2023C12.4604 54.1167 18.3283 48.4708 18.3283 48.4708C19.0916 47.7389 21.0217 49.3928 20.1126 50.2244C19.6653 50.6332 14.439 55.6471 12.7715 57.3865C11.9402 57.9805 11.6825 57.2154 10.8512 56.6261C10.4476 56.3362 7.43343 53.4514 7.07853 53.114C6.51459 52.5817 6.73822 52.1872 7.39454 51.5456H7.38968Z"
+                                                        fill="#09FF2A"
+                                                    />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_496_8">
+                                                        <rect
+                                                            width="52"
+                                                            height="65"
+                                                            fill="white"
+                                                        />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                        <p
+                                            class="text-[17px] leading-[19px] font-medium max-w-[156px] min-h-[130px]"
+                                        >
+                                            <span>9,319</span><br />
+
+                                            Active institutional review board-
+                                            approved human research studies
+                                        </p>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <div
+                                            class="h-[100px] mb-4 flex items-end"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="58"
+                                                height="58"
+                                                viewBox="0 0 58 58"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M48.7952 49.8821L40.0052 47.5052C39.4037 47.3434 38.7773 47.6835 38.5907 48.2767L35.8238 56.9506C35.8072 57.0004 35.745 57.017 35.7076 56.9797L29.2821 50.5292C28.8424 50.0853 28.133 50.0687 27.6684 50.4877L20.9317 56.6146C20.8944 56.6519 20.8322 56.6312 20.8156 56.5814L18.476 47.7831C18.3142 47.1816 17.7086 46.8083 17.0988 46.941L8.20089 48.8824C8.15111 48.8948 8.10548 48.845 8.11793 48.7952L10.4948 40.0052C10.6566 39.4037 10.3165 38.7773 9.72328 38.5907L1.04938 35.8238C0.999604 35.8072 0.983011 35.745 1.02034 35.7076L7.47081 29.2821C7.91466 28.8424 7.93126 28.133 7.51229 27.6684L1.38539 20.9317C1.34805 20.8944 1.36879 20.8322 1.41857 20.8156L10.2169 18.476C10.8184 18.3142 11.1917 17.7086 11.059 17.0988L9.11764 8.20089C9.1052 8.15111 9.15498 8.10548 9.20476 8.11793L17.9948 10.4948C18.5963 10.6566 19.2227 10.3165 19.4093 9.72328L22.1762 1.04938C22.1928 0.999604 22.255 0.983011 22.2923 1.02034L28.7179 7.47081C29.1576 7.91466 29.867 7.93126 30.3316 7.51229L37.0683 1.38539C37.1056 1.34805 37.1678 1.36879 37.1844 1.41857L39.524 10.2169C39.6858 10.8184 40.2914 11.1917 40.9012 11.059L49.7991 9.11764C49.8489 9.1052 49.8945 9.15498 49.8821 9.20476L47.5052 17.9948C47.3434 18.5963 47.6835 19.2227 48.2767 19.4093L56.9506 22.1762C57.0004 22.1928 57.017 22.255 56.9796 22.2923L50.5292 28.7179C50.0853 29.1576 50.0687 29.867 50.4877 30.3316L56.6146 37.0683C56.6519 37.1056 56.6312 37.1678 56.5814 37.1844L47.7831 39.524C47.1816 39.6858 46.8083 40.2914 46.941 40.9012L48.8824 49.7991C48.8948 49.8489 48.845 49.8945 48.7952 49.8821Z"
+                                                    stroke="#09FF2A"
+                                                    stroke-width="2"
+                                                    stroke-miterlimit="10"
+                                                />
+                                                <path
+                                                    d="M21.722 26.8285H23.2623V34.4004H21.4751L18.0067 29.1565V34.4004H16.4782V26.8285H18.2536L21.722 32.0606V26.8285ZM26.4022 33.0835H30.4585V34.4004H24.7796V26.8285H30.1999V28.1454H26.4022V29.8267H29.3533V31.0965H26.4022V33.0835ZM40.6558 26.6724H42.3238L39.8038 34.4004H38.1238L36.5158 28.8084L34.9078 34.4004H33.2278L30.7078 26.6724H32.4358L34.1038 32.4684L35.7358 26.6724H37.3558L38.9878 32.4684L40.6558 26.6724Z"
+                                                    fill="#09FF2A"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <p
+                                            class="text-[17px] leading-[19px] font-medium max-w-[156px] min-h-[130px]"
+                                        >
+                                            <span>1,200 </span><br />
+                                            New institutional review
+                                            board-approved human research
+                                            studies in 2023
+                                        </p>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <div
+                                            class="h-[100px] mb-4 flex items-end"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="86"
+                                                height="57"
+                                                viewBox="0 0 86 57"
+                                                fill="none"
+                                            >
+                                                <g
+                                                    clip-path="url(#clip0_496_14)"
+                                                >
+                                                    <path
+                                                        d="M77.6424 55.8608C77.2819 56.3327 77.083 56.7471 76.4241 56.9255L1.19381 57.0004C0.193059 56.9543 0.0314475 56.327 0.0625267 55.3715V13.7819C-0.105301 13.3617 0.130901 12.8783 0.441693 12.8783H5.71272V8.69398C5.71272 8.53858 6.27215 7.84792 6.4897 7.71554C7.3102 7.21481 9.5479 6.63925 10.5673 6.40327C14.993 5.35576 19.0892 5.31547 23.5833 6.00614C28.9662 6.83494 34.0632 8.98752 38.5013 11.8538C46.2959 6.8925 55.8248 4.3025 65.2978 6.12701C66.4539 6.35147 70.2269 7.26661 70.9231 7.99181C71.0039 8.07239 71.3769 8.65945 71.3769 8.69974V12.3085H76.6479C76.9152 12.3085 77.4373 13.1143 77.6424 13.2984V55.8665V55.8608ZM36.8603 53.0405V13.92C28.991 8.57312 17.6658 6.25938 8.28608 9.46523V49.0807C16.031 46.8073 25.0129 47.7282 32.3289 50.7959L36.8541 53.0405H36.8603ZM68.7911 9.46523C59.3989 6.25938 47.4832 8.57312 39.5953 13.92V53.0405L44.4374 50.9398C51.8156 47.7569 60.928 46.7727 68.7849 49.0807V9.46523H68.7911ZM6.32188 14.697H2.02673V54.4564H33.3608L30.7066 52.8679C24.5094 50.3354 17.5104 48.8505 10.903 50.5484C9.72194 50.8534 7.62099 51.947 6.57051 51.4463C6.29701 51.3196 6.33431 50.6635 6.33431 50.4045V14.697H6.32188ZM75.0566 14.697H71.3831V50.9801C71.3831 51.6995 70.2269 52.252 69.4748 52.1887C68.6232 52.1139 66.5658 51.1988 65.4594 50.9513C58.9141 49.4663 52.1388 50.4505 46.0784 53.006L43.1072 54.4564H75.0629V14.697H75.0566Z"
+                                                        fill="#09FF2A"
+                                                    />
+                                                    <path
+                                                        d="M12.6555 15.0077C13.5133 14.6796 17.2055 15.0422 18.3057 15.1746C22.5636 15.6926 29.9915 17.7128 33.5656 19.8999C35.0388 20.8035 34.5788 22.1618 32.9316 22.2597C26.6474 19.215 19.9156 17.2754 12.755 17.2351C11.748 16.9243 11.6796 15.3818 12.6493 15.0077H12.6555Z"
+                                                        fill="#09FF2A"
+                                                    />
+                                                    <path
+                                                        d="M12.4944 25.5175C13.3522 25.1894 17.0444 25.552 18.1446 25.6844C22.4024 26.2024 29.8304 28.2226 33.4045 30.4097C34.8776 31.3133 34.4177 32.6716 32.7705 32.7695C26.4863 29.7248 19.7545 27.7851 12.5938 27.7449C11.5869 27.4341 11.5185 25.8916 12.4882 25.5175H12.4944Z"
+                                                        fill="#09FF2A"
+                                                    />
+                                                    <path
+                                                        d="M12.3328 36.0272C13.1906 35.6992 16.8828 36.0618 17.983 36.1941C22.2408 36.7121 29.6687 38.7323 33.2429 40.9194C34.716 41.8231 34.256 43.1814 32.6088 43.2792C26.3246 40.2345 19.5929 38.2949 12.4322 38.2546C11.4253 37.9438 11.3569 36.4013 12.3266 36.0272H12.3328Z"
+                                                        fill="#09FF2A"
+                                                    />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_496_14">
+                                                        <rect
+                                                            width="86"
+                                                            height="57"
+                                                            fill="white"
+                                                        />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+
+                                        <p
+                                            class="text-[17px] leading-[19px] font-medium min-h-[130px]"
+                                        >
+                                            <span>11,220 </span><br />
+                                            Peer-reviewed <br />publications
+                                        </p>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <div
+                                            class="h-[100px] mb-4 flex items-end"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="82"
+                                                height="55"
+                                                viewBox="0 0 82 55"
+                                                fill="none"
+                                            >
+                                                <g
+                                                    clip-path="url(#clip0_496_20)"
+                                                >
+                                                    <path
+                                                        d="M69.6385 30.8533C69.0317 30.5115 68.0608 32.3233 67.8874 32.8019C66.4889 36.7163 68.5983 42.1918 62.091 42.8071C61.1721 45.4053 59.3112 47.3824 56.3696 47.4963C55.942 47.5134 55.5432 47.2399 55.1271 47.3596C54.8266 47.4451 54.1447 48.3339 53.7979 48.6017C52.2145 49.821 50.1744 50.5104 48.1575 50.3566C46.9323 50.2654 45.2275 49.5475 44.6785 49.2683C44.3837 49.1202 43.1759 48.1971 42.7482 48.8353C42.5055 49.1942 38.6451 53.6157 38.177 53.9974C35.6457 56.0828 31.5194 54.7552 31.1784 51.4619C28.2831 52.1912 25.3184 50.1116 25.1508 47.1659C23.0703 46.8981 21.0303 46.0548 20.5506 43.8384C16.0602 45.1945 13.0609 40.1064 16.1412 36.6878L12.1767 30.0955C10.9515 30.802 9.9286 31.2066 8.4607 30.9103C7.62272 30.7394 1.67023 27.7822 0.791799 27.2011C-0.618308 26.2667 -0.0114999 24.5687 1.61243 24.7966L8.78433 28.3634C10.6163 28.9389 10.9284 27.2695 11.5583 26.0046C14.2803 20.5177 16.6324 14.8257 19.2561 9.29318C19.2677 8.76329 19.1001 8.15364 18.5626 7.92573L5.18971 2.22232C4.06856 1.09417 5.18393 -0.466999 6.66917 0.131261C10.6336 2.15965 15.6846 3.45872 19.5277 5.54978C20.5448 6.10246 21.1285 6.7634 21.5909 7.80608C21.7353 8.13654 21.7353 8.92853 22.0994 9.04818C26.3702 9.76609 29.1384 6.05688 33.074 5.30478C36.79 4.59827 40.3788 6.33037 43.6671 7.79468C46.0539 6.90584 48.0708 6.31897 50.631 6.94572C53.3356 7.60666 56.6702 10.7461 59.2765 10.5068C60.0394 10.4384 59.8256 9.82307 60.1319 9.27039C60.5826 8.44992 61.0276 8.08527 61.8251 7.60666C65.6509 5.29339 70.4071 3.64105 74.2965 1.32778C75.7759 0.495914 77.0358 2.39325 75.7759 3.42454L63.0041 9.88574C62.6284 10.1364 62.2355 10.5182 62.2817 11.0082C65.0846 16.4039 67.558 22.2042 70.5401 27.486C71.222 28.6996 71.4821 30.0385 73.0829 29.5087C75.4986 28.711 78.0703 26.751 80.5437 25.8963C82.0578 25.9932 82.5433 27.4233 81.2314 28.3349C80.3241 28.9674 74.6259 31.7194 73.5568 32.0384C72.1524 32.4601 70.4476 32.084 69.6327 30.8419L69.6385 30.8533ZM40.5117 9.07667C38.4833 8.53538 36.4952 7.47561 34.3338 7.66363C30.6814 7.98271 28.1097 11.3216 24.336 11.6178C23.2379 11.7033 22.1341 11.5438 21.0476 11.4697L13.6908 27.3264C13.4885 28.05 14.7542 29.1383 15.1992 29.822C16.2567 31.4402 16.6382 33.2976 17.8865 34.7847C20.123 33.0184 23.4171 33.6908 24.6596 36.232C27.1388 34.4258 30.5774 34.9899 31.6581 37.9698C35.7382 33.4971 42.4766 38.2489 39.7084 43.525C41.1012 43.7529 42.3033 45.1774 42.4477 46.5448C43.7943 45.0577 45.1697 47.0063 46.7069 47.502C48.8106 48.1801 50.943 47.7812 52.5901 46.3055L45.0772 42.0436C44.0312 40.9725 45.2275 39.3771 46.5856 39.9981C49.1515 41.2573 51.6365 43.0065 54.1967 44.2429C55.6068 44.9267 56.728 45.3597 58.1438 44.317C58.6871 43.9182 59.9238 42.2886 59.2534 41.7986L51.2147 37.4968C50.1398 36.4997 51.336 34.7449 52.7057 35.3944C55.1907 36.6422 57.6584 38.3002 60.155 39.4854C61.594 40.1691 63.0388 40.7673 64.183 39.1663C65.3273 37.5652 64.4546 35.9186 62.9405 34.9899C58.1034 32.0043 50.839 29.5201 46.7012 25.9134C45.2333 24.6314 43.0777 21.737 41.5346 21.0077C37.9458 19.3155 34.6806 22.8993 30.3578 20.757C28.1617 19.6687 25.8848 16.3299 26.6072 13.8741C27.2024 11.8515 29.1731 12.1933 30.745 11.9198C33.6519 11.4241 36.3797 10.7176 39.1421 9.72051L40.5059 9.08236L40.5117 9.07667ZM60.3052 12.8941C55.5086 13.9881 52.2434 8.78608 47.6778 9.2362C45.3257 9.46981 40.6851 11.9369 38.0556 12.7688C35.1314 13.6918 32.1436 14.3357 29.0806 14.6376C29.0517 16.4324 30.6583 18.4836 32.4441 18.8482C34.7557 19.3211 36.4895 18.1075 38.6451 17.9594C43.9272 17.6061 46.0192 22.1016 49.5329 25.0189L65.1424 33.366C65.5469 31.5086 66.4542 29.6511 68.1359 28.6027L60.2994 12.8941H60.3052ZM20.6489 36.2775C20.2328 36.2946 19.7473 36.5282 19.4295 36.796C19.1694 37.0182 17.5859 38.9612 17.5224 39.2005C17.0658 40.9326 18.684 42.1918 20.2154 41.2174C20.6084 40.9668 22.2786 39.0181 22.4057 38.6136C22.764 37.4456 21.9145 36.2377 20.6547 36.2775H20.6489ZM27.4336 37.6792C27.1099 37.7248 26.6129 38.0096 26.3587 38.2205C25.9541 38.5623 23.2206 41.6334 23.0819 41.9752C22.3422 43.7814 24.4053 45.2628 25.9426 44.0036C26.8383 42.4823 30.6063 40.2147 28.9939 38.2945C28.6645 37.9014 27.9479 37.6108 27.4336 37.6792ZM34.8366 38.8016C34.224 38.927 33.6924 39.5309 33.2647 39.9526C31.4212 41.7701 29.8203 43.8726 27.9768 45.6959C26.7921 47.6787 29.0806 50.0204 31.1669 48.6815C32.8775 46.7043 35.4608 44.7272 37.0558 42.7387C37.3217 42.4026 37.6973 41.9582 37.7666 41.5365C38.0498 39.8272 36.5646 38.4484 34.8308 38.8016H34.8366ZM37.8938 45.7813C37.6742 45.8326 37.547 45.9466 37.3737 46.0662C36.9113 46.3853 33.9409 49.5475 33.7675 49.9691C33.074 51.65 34.721 53.1599 36.3219 52.1684C37.4892 51.4448 38.8127 49.1999 39.9107 48.2427C40.4713 46.8924 39.3617 45.4452 37.8938 45.7756V45.7813Z"
+                                                        fill="#09FF2A"
+                                                    />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_496_20">
+                                                        <rect
+                                                            width="82"
+                                                            height="55"
+                                                            fill="white"
+                                                        />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </div>
+
+                                        <p
+                                            class="text-[17px] leading-[19px] font-medium min-h-[130px]"
+                                        >
+                                            <span>5943 </span><br />
+                                            Active grants <br />
+                                            and contracts
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="involved" class="h-screen pt-[354px]">
+                <video class="bg" autoplay muted loop playsinline>
+                    <source src="/videos/section-6.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div class="w-full relative">
+                    <h2 class="section-title text-center">GET INVOLVED</h2>
+                    <p class="large text-center mb-3.5 mx-auto">
+                        Research needs people like you.
+                    </p>
+                    <img src="/images/get-involved.png" alt="" />
+                    <h3
+                        class="pt-6 text-center text-[32px] font-bold leading-9 tracking-[0.64px]"
+                    >
+                        There are many ways to get involved<br />
+                        in or support research.
+                    </h3>
+                    <div>
+                        <svg
+                            class="ml-[293px] draw mb-2 mt-6 overflow-visible py-0.5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="248"
+                            height="110"
+                            viewBox="0 0 248 110"
+                            fill="none"
+                        >
+                            <path
+                                d="M247 0V27.8745V45.7489C247 56.7946 238.046 65.7489 227 65.7489H21C9.9543 65.7489 1 74.7032 1 85.7489V110"
+                                stroke="#5CCBF2"
+                            />
+                            <circle cx="2" cy="2" r="2" fill="#5CB5EA" />
+                        </svg>
+                        <div
+                            class="max-h-[89px] flex gap-2 items-center ml-[240px] relative"
+                        >
+                            <h2 class="number">1</h2>
+                            <div>
+                                <h3>Participate in a research study</h3>
+                                <p>
+                                    Some study participation is very simple,
+                                    like completing a survey or giving a blood
+                                    sample. Other study activities are more
+                                    complicated and may involve study visits,
+                                    medications, or procedures. Each study is
+                                    unique, and you can always choose whether
+                                    you would like to participate.
+                                </p>
+                            </div>
+                        </div>
+                        <svg
+                            class="ml-[297px] my-2 draw overflow-visible"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="2"
+                            height="92"
+                            viewBox="0 0 2 92"
+                            fill="none"
+                        >
+                            <path d="M1 0V92" stroke="#5CB5EA" />
+                            <circle cx="2" cy="2" r="2" fill="#5CB5EA" />
+                        </svg>
+                        <div
+                            class="max-h-[89px] flex gap-2 items-center ml-[240px] relative"
+                        >
+                            <h2 class="number">2</h2>
+                            <div>
+                                <h3>
+                                    Allow your medical records to be used in
+                                    research
+                                </h3>
+                                <p>
+                                    Some studies observe patients’ health
+                                    through the medical record over a period of
+                                    time. This allows researchers to see how
+                                    diseases progress and learn from larger
+                                    groups of people.
+                                </p>
+                            </div>
+                        </div>
+                        <svg
+                            class="ml-[297px] my-2 draw overflow-visible"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="2"
+                            height="80"
+                            viewBox="0 0 2 80"
+                            fill="none"
+                        >
+                            <path d="M1 0V79.5" stroke="#5CB5EA" />
+                            <circle cx="2" cy="2" r="2" fill="#5CB5EA" />
+                        </svg>
+                        <div
+                            class="max-h-[89px] flex gap-2 items-center ml-[240px] relative"
+                        >
+                            <h2 class="number">3</h2>
+                            <div>
+                                <h3>Join a research volunteer registry</h3>
+                                <p>
+                                    Volunteer registries allow you to
+                                    proactively sign-up to be contacted about
+                                    potential research opportunities.
+                                </p>
+                            </div>
+                        </div>
+                        <svg
+                            class="ml-[297px] my-2 draw overflow-visible"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="245"
+                            height="92"
+                            viewBox="0 0 245 92"
+                            fill="none"
+                        >
+                            <path
+                                d="M1 0V9.13365C1 20.1793 9.9543 29.1336 21 29.1336H224C235.046 29.1336 244 38.0879 244 49.1336V91.5"
+                                stroke="#5CB5EA"
+                            />
+                            <circle cx="2" cy="2" r="2" fill="#5CB5EA" />
+                        </svg>
+
+                        <p
+                            class="custom mx-auto text-center my-4 text-[11px] font-bold leading-3.5 tracking-[0.88px]"
+                        >
+                            SCAN THIS QR CODE TO SEE <br />
+                            THE FULL WEBSITE FOR MORE DETAILS
+                        </p>
+                        <img
+                            src="/images/qr-code.png"
+                            class="m-auto pt-2"
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
 </html>
